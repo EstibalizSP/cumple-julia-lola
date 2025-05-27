@@ -74,9 +74,9 @@
     /* Espacio para dejar libre los capibaras */
     .espacio-capibaras {
       width: 100%;
-      height: 44vw;   /* AJUSTA este valor según el alto del dibujo en el fondo */
-      min-height: 150px;
-      max-height: 270px;
+      height: 70vw;   /* AJUSTA aquí si quieres aún más espacio */
+      min-height: 210px;
+      max-height: 360px;
       pointer-events: none;
       user-select: none;
     }
@@ -95,7 +95,7 @@
       font-weight: 600;
       letter-spacing: 0.1px;
       margin-bottom: 18px;
-      margin-top: 54px; /* aún más margen arriba */
+      margin-top: 130px; /* MÁS margen aún */
       text-align: center;
       text-shadow: 1px 1px 2px #fffdf6c5;
       background: none !important;
@@ -140,8 +140,8 @@
       .fotos-cumple { margin-top: 39vw; }
       .fotos-cumple img { width: 43vw; height: 38vw; }
       .texto-cumple { font-size: 1.06em; }
-      .espacio-capibaras { height: 46vw; min-height: 140px; }
-      .evento-info { margin-top: 64px; }
+      .espacio-capibaras { height: 76vw; min-height: 170px; }
+      .evento-info { margin-top: 150px; }
     }
   </style>
 </head>
@@ -177,7 +177,7 @@
   <!-- Cuenta atrás JS -->
   <script>
     // Fecha del evento (año, mes-1, día, hora, min)
-    const eventDate = new Date(2024, 5, 16, 17, 0, 0); // 16 junio 2024, 17:00
+    const eventDate = new Date(2025, 5, 16, 17, 0, 0); // 16 junio 2025, 17:00
     function updateCountdown() {
       const now = new Date();
       const diff = eventDate - now;
@@ -197,4 +197,5 @@
   </script>
 </body>
 </html>
+
 
