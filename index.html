@@ -4,63 +4,73 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>🎉 Cumple Julia & Lola 🎉</title>
+  <!-- Cargo la fuente Fredoka para usar en toda la página -->
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&display=swap" rel="stylesheet" />
   <style>
+    /* Aquí defino el estilo general del body con fondo, fuente y colores */
     body {
       font-family: 'Fredoka', sans-serif;
       background: url('fondo3.png') no-repeat center top;
       background-size: cover;
       margin: 0;
-      padding: 0 0 40px 0;
-      color: #5c3b26;
-      text-shadow: 1px 1px 2px #fff8e7;
-      overflow-x: hidden;
-      min-height: 100vh;
+      padding: 0 0 40px 0; /* un poco de espacio abajo */
+      color: #5c3b26; /* color marrón para el texto */
+      text-shadow: 1px 1px 2px #fff8e7; /* sombra blanca suave para que resalte */
+      overflow-x: hidden; /* evito scroll horizontal */
+      min-height: 100vh; /* al menos toda la pantalla */
       position: relative;
     }
+
+    /* Div para los corazones que caen en el fondo, siempre encima pero sin molestar */
     .corazones-cayendo {
-      pointer-events: none;
+      pointer-events: none; /* no interactúa con clicks */
       position: fixed;
       top: 0; left: 0; width: 100vw; height: 100vh;
-      z-index: 1;
+      z-index: 1; /* debajo del contenido principal */
       overflow: visible;
     }
+    /* Cada corazón individual que cae, con animación suave */
     .corazon {
       position: absolute;
       font-size: 1.14em;
       opacity: 0.22;
       animation: caer 8s linear infinite;
       pointer-events: none;
-      user-select: none;
-      will-change: transform, opacity;
+      user-select: none; /* no se puede seleccionar */
+      will-change: transform, opacity; /* para optimizar animación */
     }
     @keyframes caer {
       0% { transform: translateY(-10vh) scale(1) rotate(-2deg); opacity: 0.35;}
       60% { opacity: 0.54;}
       100% { transform: translateY(104vh) scale(0.95) rotate(3deg); opacity: 0;}
     }
+
+    /* Contenedor de las fotos de Julia y Lola, las centro y dejo un espacio grande arriba */
     .fotos-cumple {
       display: flex;
       justify-content: center;
       gap: 10px;
-      margin-top: 45vw; /* Fotos un poco más arriba que antes */
+      margin-top: 45vw; /* ajusto para que estén bien abajo */
       margin-bottom: 2vw;
       width: 100%;
-      max-width: 330px;
-      z-index: 2;
+      max-width: 330px; /* máximo ancho para que no sean gigantes */
+      z-index: 2; /* encima de los corazones */
       position: relative;
     }
+    /* Estilo de las imágenes de Julia y Lola: tamaño, bordes y sombra */
     .fotos-cumple img {
-      width: 45vw;
+      width: 45vw; /* tamaño responsivo ancho */
       max-width: 140px;
-      height: 40vw;
+      height: 40vw; /* tamaño responsivo alto */
       max-height: 160px;
-      object-fit: cover;
-      border-radius: 16px;
-      border: 3px solid #ff6995;
-      box-shadow: 0 0 8px rgba(255,105,149,0.4);
-      background: #fff7;
+      object-fit: cover; /* para que no se deformen */
+      border-radius: 16px; /* bordes redondeados */
+      border: 3px solid #ff6995; /* borde rosa */
+      box-shadow: 0 0 8px rgba(255,105,149,0.4); /* sombra rosa */
+      background: #fff7; /* fondo blanco transparente */
     }
+
+    /* Texto principal debajo de las fotos, centrado y con sombra */
     .texto-cumple {
       font-size: 1.18em;
       font-weight: 600;
@@ -72,15 +82,19 @@
       text-shadow: 1px 1px 2px #fff9, 0 2px 8px #fff8;
       line-height: 1.15;
     }
+    /* Nombre de Julia y Lola, en bloque para separar del texto de edad */
     .nombres {
       font-size: 1.5em;
       font-weight: 700;
       display: block;
       letter-spacing: 1px;
-      margin-bottom: 0.15em;
+      margin-bottom: 0.15em; /* espacio debajo */
     }
+    /* Color específico para Julia */
     .nombre-julia { color: #ff469e; font-weight: 700;}
+    /* Color específico para Lola */
     .nombre-lola { color: #ffb968; font-weight: 700;}
+    /* Estilo del símbolo & con degradado */
     .nombre-and {
       background: linear-gradient(90deg, #ff469e 0%, #ffb968 100%);
       -webkit-background-clip: text;
@@ -90,8 +104,9 @@
       font-size: 1.07em;
       padding: 0 0.11em;
     }
+    /* Texto "¡Cumplimos 10 años!" con animación de brillo neón */
     .cumple-edad {
-      font-size: 1.2em;
+      font-size: 1.2em; /* tamaño un poco más pequeño que el nombre */
       color: #ff1da7;
       font-weight: bold;
       margin: 0;
@@ -106,7 +121,8 @@
         0 0 65px #ff41b6cc,
         0 0 10px #fff,
         2px 2px 0 #fff;
-      animation: palpitarSuave 2.1s infinite cubic-bezier(.46,1.4,.54,1), neonCumple 1.2s infinite alternate;
+      animation: palpitarSuave 2.1s infinite cubic-bezier(.46,1.4,.54,1),
+                 neonCumple 1.2s infinite alternate;
     }
     @keyframes neonCumple {
       0%,100% {
@@ -139,18 +155,22 @@
       65% { transform: scale(1.01);}
       80% { transform: scale(1.01);}
     }
+
+    /* Este div deja espacio vacío para que el fondo se vea bien */
     .espacio-fondo {
       width: 100%;
       height: 35vw;
       min-height: 110px;
       max-height: 200px;
     }
+
+    /* La frase invitación, grande, rosa y con animaciones de brillo y movimiento */
     .subfrase-grande-rosa {
       font-size: 1.08em;
       font-weight: 800;
       width: 97vw;
       max-width: 320px;
-      margin: 12em auto 1.1em auto; /* Bajamos más la frase */
+      margin: 8em auto 1.1em auto; /* margen arriba ajustado para subirla un poco */
       color: #ff3d8b;
       text-align: center;
       letter-spacing: 1px;
@@ -169,17 +189,26 @@
       background: none !important;
       white-space: normal;
       overflow-wrap: break-word;
-      animation: brillaNeon 1.7s infinite alternate, shake 4s infinite ease-in-out;
+      animation: brillaNeon 1.7s infinite alternate,
+                 shake 4s infinite ease-in-out;
     }
     @keyframes brillaNeon {
-      0%,100% { text-shadow: 0 2px 12px #fff, 1px 1px 0 #fff, 0 0 24px #ff3d8b66; color: #ff3d8b;}
-      50% { text-shadow: 0 2px 24px #fff8, 1px 1px 0 #fff, 0 0 36px #ffb3dd; color: #fd3a69;}
+      0%,100% { text-shadow: 0 2px 12px #fff,
+                                1px 1px 0 #fff,
+                                0 0 24px #ff3d8b66;
+                color: #ff3d8b;}
+      50% { text-shadow: 0 2px 24px #fff8,
+                               1px 1px 0 #fff,
+                               0 0 36px #ffb3dd;
+             color: #fd3a69;}
     }
     @keyframes shake {
       0%,100% { transform: translateX(0);}
       22% { transform: translateX(-0.7px);}
       58% { transform: translateX(0.7px);}
     }
+
+    /* Zona final donde pongo toda la info del evento */
     .zona-final {
       width: 100%;
       max-width: 360px;
@@ -189,6 +218,7 @@
       align-items: center;
       background: none !important;
     }
+    /* Texto con info del evento y cuenta atrás */
     .evento-info, .countdown {
       font-size: 1.12em;
       font-weight: 700;
@@ -202,10 +232,12 @@
     }
     .countdown {
       color: #ff3d77;
-      text-shadow: 0 0 8px #fff8, 0 1px 3px #ffd;
+      text-shadow: 0 0 8px #fff8,
+                   0 1px 3px #ffd;
       margin-bottom: 1em;
       font-weight: 900;
     }
+    /* Botones de acción con diseño degradado y animación */
     .botones-cumple {
       display: flex;
       flex-direction: column;
@@ -230,31 +262,67 @@
       box-sizing: border-box;
       transition: background .2s, box-shadow .2s;
       text-align: center;
-      box-shadow: 0 0 19px #ffb96833, 0 0 2px #fff, 0 0 22px #ffb96844;
-      animation: palpitarSuave 2.1s infinite cubic-bezier(.46,1.4,.54,1), glowBtn 2.3s infinite alternate;
+      box-shadow: 0 0 19px #ffb96833,
+                  0 0 2px #fff,
+                  0 0 22px #ffb96844;
+      animation: palpitarSuave 2.1s infinite
+                 cubic-bezier(.46,1.4,.54,1),
+                 glowBtn 2.3s infinite alternate;
       cursor: pointer;
     }
     @keyframes glowBtn {
-      0%   { box-shadow: 0 0 19px #ffb96833, 0 0 2px #fff, 0 0 22px #ffb96844;}
-      100% { box-shadow: 0 0 32px #ffb96899, 0 0 12px #fff4, 0 0 34px #ffd3;}
+      0% {
+        box-shadow: 0 0 19px #ffb96833,
+                    0 0 2px #fff,
+                    0 0 22px #ffb96844;
+      }
+      100% {
+        box-shadow: 0 0 32px #ffb96899,
+                    0 0 12px #fff4,
+                    0 0 34px #ffd3;
+      }
     }
+
+    /* Ajustes para pantallas pequeñas */
     @media (max-width: 600px) {
-      .fotos-cumple { margin-top: 35vw; gap: 4vw; }
-      .fotos-cumple img { width: 48vw; height: 42vw; max-width: 160px; max-height: 170px; }
-      .texto-cumple { font-size: 1.09em; }
-      .subfrase-grande-rosa { font-size: 1em; margin: 14em auto 1.4em auto; }
-      .botones-cumple { max-width: 98vw; }
-      .espacio-fondo { height: 35vw; min-height: 90px;}
+      .fotos-cumple {
+        margin-top: 35vw; /* Fotos un poco más arriba en móvil */
+        gap: 4vw;
+      }
+      .fotos-cumple img {
+        width: 48vw;
+        height: 42vw;
+        max-width: 160px;
+        max-height: 170px;
+      }
+      .texto-cumple {
+        font-size: 1.09em;
+      }
+      .subfrase-grande-rosa {
+        font-size: 1em;
+        margin: 10em auto 1.4em auto; /* Subo un poco menos en móvil */
+      }
+      .botones-cumple {
+        max-width: 98vw;
+      }
+      .espacio-fondo {
+        height: 35vw;
+        min-height: 90px;
+      }
     }
   </style>
 </head>
 <body>
+  <!-- Aquí pongo los corazones que caen, div fijo con z-index bajo -->
   <div class="corazones-cayendo" id="corazones"></div>
 
+  <!-- Fotos de Julia y Lola -->
   <div class="fotos-cumple">
     <img src="julia1.jpg" alt="Foto de Julia" />
     <img src="lola.jpg" alt="Foto de Lola" />
   </div>
+
+  <!-- Texto con nombres y edad (en dos líneas) -->
   <div class="texto-cumple">
     <span class="nombres">
       <span class="nombre-julia">Julia</span>
@@ -264,14 +332,16 @@
     <span class="cumple-edad">¡Cumplimos 10 años!</span>
   </div>
 
+  <!-- Espacio vacío para que se vea bien el fondo -->
   <div class="espacio-fondo"></div>
 
+  <!-- Zona final con invitación, fecha, dirección, cuenta atrás y botones -->
   <div class="zona-final">
     <div class="subfrase-grande-rosa">
       ¡Celebra con nosotras una tarde llena de alegría y capibaras! 🎉
     </div>
     <div class="evento-info">
-      16 Junio - 17:00 h<br>
+      16 Junio - 17:00 h<br />
       Calle Hispalis, 2 (Bollullos de la Mitación)
     </div>
     <div class="countdown" id="countdown"></div>
@@ -282,12 +352,13 @@
     </div>
   </div>
 
+  <!-- Script para la cuenta atrás -->
   <script>
-    const eventDate = new Date(2025, 5, 16, 17, 0, 0);
+    const eventDate = new Date(2025, 5, 16, 17, 0, 0); // Fecha y hora del evento
     function updateCountdown() {
       const now = new Date();
       const diff = eventDate - now;
-      if(diff > 0) {
+      if (diff > 0) {
         const days = Math.floor(diff / (1000 * 60 * 60 * 24));
         const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
         const mins = Math.floor((diff / (1000 * 60)) % 60);
@@ -302,23 +373,26 @@
     updateCountdown();
   </script>
 
+  <!-- Script para crear los corazones animados -->
   <script>
     const corazonesDiv = document.getElementById('corazones');
-    const emojis = ['💖','💗','💕'];
+    const emojis = ['💖', '💗', '💕'];
     function creaCorazon() {
       const corazon = document.createElement('span');
       corazon.className = 'corazon';
-      corazon.style.left = (Math.random()*100)+'vw';
-      corazon.style.fontSize = (1.0 + Math.random()*0.2)+'em';
-      corazon.style.animationDuration = (7.8 + Math.random()*2.5)+'s';
-      corazon.textContent = emojis[Math.floor(Math.random()*emojis.length)];
+      corazon.style.left = (Math.random() * 100) + 'vw';
+      corazon.style.fontSize = (1.0 + Math.random() * 0.2) + 'em';
+      corazon.style.animationDuration = (7.8 + Math.random() * 2.5) + 's';
+      corazon.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+      corazon.style.opacity = 0.18 + Math.random() * 0.14;
       corazonesDiv.appendChild(corazon);
-      setTimeout(()=>corazon.remove(), 9500);
+      setTimeout(() => corazon.remove(), 9500);
     }
     setInterval(creaCorazon, 2000);
-    for(let i=0; i<1; i++) setTimeout(creaCorazon, i*1100);
+    for (let i = 0; i < 1; i++) setTimeout(creaCorazon, i * 1100);
   </script>
 
+  <!-- Confetti y música para el botón de la fiesta -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
   <audio id="cumpleAudio" preload="auto" src="audio1.mp3"></audio>
   <script>
