@@ -47,8 +47,8 @@
       display: flex;
       justify-content: center;
       gap: 10px;
-      margin-top: 12vw;      /* Margen arriba */
-      margin-bottom: 2vw;    /* Margen abajo */
+      margin-top: 25vw;      /* Aumentado para bajar las fotos mucho más */
+      margin-bottom: 2vw;
       width: 100%;
       max-width: 330px;
       z-index: 2;
@@ -97,7 +97,7 @@
       padding: 0 0.11em;
     }
     .texto-cumple .cumple-edad {
-      font-size: 2em; /* Hago más grande el mensaje */
+      font-size: 2em;
       display: block;
       color: #ff1da7;
       font-weight: bold;
@@ -150,7 +150,7 @@
     /* -- Dejo un espacio vacío GRANDE para que se vean bien las capibaras de fondo -- */
     .espacio-fondo {
       width: 100%;
-      height: 35vw;    /* Puedo aumentar este valor para dejar más hueco (prueba con 38vw, 120px, etc) */
+      height: 35vw;
       min-height: 110px;
       max-height: 200px;
     }
@@ -161,7 +161,7 @@
       font-weight: 800;
       width: 97vw;
       max-width: 320px;
-      margin: 0.8em auto 1.1em auto;
+      margin: 3.5em auto 1.1em auto; /* Aumentado margen superior para bajar más */
       color: #ff3d8b;
       text-align: center;
       letter-spacing: 1px;
@@ -251,10 +251,10 @@
     }
     /* -- Ajusto todo para móvil, que todo sea más grande y claro -- */
     @media (max-width: 600px) {
-      .fotos-cumple { margin-top: 10vw; gap: 4vw;}
+      .fotos-cumple { margin-top: 20vw; gap: 4vw;} /* También aumentado para móvil */
       .fotos-cumple img { width: 44vw; height: 37vw; max-width: 140px; max-height: 150px;}
       .texto-cumple { font-size: 1.09em; }
-      .subfrase-grande-rosa { font-size: 1em; margin: 1.1em auto 1.4em auto;}
+      .subfrase-grande-rosa { font-size: 1em; margin: 2.5em auto 1.4em auto;} /* Más margen arriba para móvil */
       .botones-cumple { max-width: 98vw; }
       .espacio-fondo { height: 35vw; min-height: 90px;}
     }
@@ -378,3 +378,4 @@
   </script>
 </body>
 </html>
+
