@@ -83,66 +83,64 @@
       letter-spacing: 1px;
       margin-bottom: 0px;
     }
-    /* MEGA ROSA Y BRILLANTE */
     .texto-cumple .cumple-edad {
-      font-size: 3.1em; /* ¡Súper grande! */
+      font-size: 2.1em; /* Más pequeño para una línea pero sigue muy grande */
       display: block;
-      color: #ff1da7; /* Mega rosa fuerte */
-      margin-bottom: 0px;
+      color: #ff1da7;
       font-weight: bold;
-      background: none !important;
-      padding: 0.18em 0.1em;
+      margin-bottom: 0;
+      padding: 0.12em 0.1em;
       border-radius: 0;
-      letter-spacing: 2px;
+      letter-spacing: 1.5px;
+      white-space: nowrap; /* Obliga a una sola línea */
+      overflow: hidden;
+      text-overflow: ellipsis;
       text-shadow:
-        0 0 32px #ffb3f7,
+        0 0 24px #ffb3f7,
         0 0 40px #ffb4e2,
-        0 0 80px #ff79c8,
-        0 0 120px #ff41b6,
-        0 2px 42px #ffe7fa,
-        0 0 180px #ff41b6cc,
+        0 0 70px #ff79c8,
+        0 0 80px #ff41b6,
+        0 2px 22px #ffe7fa,
+        0 0 90px #ff41b6cc,
         0 0 8px #fff,
         1px 1px 0 #fff;
-      animation: palpitar 1.5s infinite cubic-bezier(.4,1.5,.7,1), neonCumple 1.3s infinite alternate;
-      /* Para móviles que se pase un poco de tamaño */
-      word-break: break-word;
-    }
-    @keyframes palpitar {
-      0%, 100% { transform: scale(1);}
-      20% { transform: scale(1.13);}
-      40% { transform: scale(0.98);}
-      65% { transform: scale(1.08);}
-      80% { transform: scale(1.02);}
+      animation: palpitarBoton 1.5s infinite cubic-bezier(.4,1.5,.7,1), neonCumple 1.3s infinite alternate;
     }
     @keyframes neonCumple {
       0%,100% {
         text-shadow:
-          0 0 32px #ffb3f7,
+          0 0 24px #ffb3f7,
           0 0 40px #ffb4e2,
-          0 0 80px #ff79c8,
-          0 0 120px #ff41b6,
-          0 2px 42px #ffe7fa,
-          0 0 180px #ff41b6cc,
+          0 0 70px #ff79c8,
+          0 0 80px #ff41b6,
+          0 2px 22px #ffe7fa,
+          0 0 90px #ff41b6cc,
           0 0 8px #fff,
           1px 1px 0 #fff;
         color: #ff1da7;
       }
       50% {
         text-shadow:
-          0 0 56px #ffb3f7,
+          0 0 38px #ffb3f7,
           0 0 86px #ea8fff,
-          0 0 120px #ff79c8,
-          0 2px 62px #ffe7fa,
-          0 0 230px #ff41b6cc,
+          0 0 80px #ff79c8,
+          0 2px 32px #ffe7fa,
+          0 0 110px #ff41b6cc,
           1px 1px 0 #fff;
         color: #ff7ede;
       }
     }
+    @keyframes palpitarBoton {
+      0%, 100% { transform: scale(1);}
+      25% { transform: scale(1.07);}
+      55% { transform: scale(1.04);}
+      70% { transform: scale(0.96);}
+    }
     .espacio-capibaras {
       width: 100%;
-      height: 70vw;
-      min-height: 210px;
-      max-height: 360px;
+      height: 60vw; /* Más pequeño para que no lo tape */
+      min-height: 130px;
+      max-height: 210px;
       pointer-events: none;
       user-select: none;
     }
@@ -208,15 +206,6 @@
       56% { transform: translateX(-1px);}
       74% { transform: translateX(1px);}
     }
-    @media (max-width: 600px) {
-      .subfrase-grande-rosa {
-        font-size: 1.18em;
-        padding: 0 2vw;
-      }
-      .texto-cumple .cumple-edad {
-        font-size: 2em;
-      }
-    }
     .zona-final {
       width: 100%;
       max-width: 430px;
@@ -246,31 +235,34 @@
       text-shadow: 0 0 8px #fff8, 0 1px 3px #ffd;
       background: none !important;
     }
+    .botones-cumple {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 13px;
+      width: 100%;
+      max-width: 340px;
+      margin: 0 auto 0 auto;
+      margin-bottom: 14px;
+    }
     .btn {
       background: linear-gradient(90deg, #ffb968 0%, #ff66ad 100%);
       color: white;
       text-decoration: none;
-      padding: 16px 28px;
+      padding: 14px 22px;
       border-radius: 30px;
       display: block;
-      font-size: 1.15em;
-      margin: 15px 0 0 0;
+      font-size: 1.13em;
       font-weight: 700;
       user-select: none;
       border: none;
-      width: 90%;
-      max-width: 320px;
+      width: 100%;
+      box-sizing: border-box;
       transition: background .2s;
       text-align: center;
       box-shadow: 0 0 25px #ffb96877, 0 0 2px #fff, 0 0 30px #ffb96899;
-      animation: palpitarBoton 1.45s infinite, glow 1.2s infinite alternate;
+      animation: palpitarBoton 1.3s infinite, glow 1.2s infinite alternate;
       cursor: pointer;
-    }
-    @keyframes palpitarBoton {
-      0%, 100% { transform: scale(1);}
-      25% { transform: scale(1.07);}
-      55% { transform: scale(1.04);}
-      70% { transform: scale(0.96);}
     }
     @keyframes glow {
       0%   { box-shadow: 0 0 25px #ffb96877, 0 0 2px #fff, 0 0 30px #ffb96899;}
@@ -278,32 +270,26 @@
     }
     .btn.whatsapp {
       background: linear-gradient(90deg, #ff66ad 0%, #ffb968 100%);
-      color: white;
       border: 2px solid #ff6995;
-      margin-top: 14px;
       box-shadow: 0 0 28px #ffb96855, 0 0 12px #ff699577;
-      animation: palpitarBoton 1.45s infinite, glow2 1.3s infinite alternate;
+      animation: palpitarBoton 1.3s infinite, glow 1.2s infinite alternate;
     }
     .btn.fiesta {
       background: linear-gradient(90deg, #ffe168 0%, #fd4eff 100%);
       border: 2px solid #fd9cfa;
       color: #fff;
-      font-size: 1.22em;
+      font-size: 1.13em;
       box-shadow: 0 0 38px #fd4eff55, 0 0 15px #ffe16888;
-      animation: palpitarBoton 1.05s infinite, glow2 1.5s infinite alternate;
-      margin-top: 20px;
-    }
-    @keyframes glow2 {
-      0%   { box-shadow: 0 0 30px #ffb96855, 0 0 15px #ffb96866, 0 0 12px #ff699577;}
-      100% { box-shadow: 0 0 42px #ffb968aa, 0 0 24px #fff8, 0 0 18px #ff699599;}
+      animation: palpitarBoton 1.3s infinite, glow 1.2s infinite alternate;
     }
     @media (max-width: 600px) {
       .fotos-cumple { margin-top: 39vw; }
       .fotos-cumple img { width: 43vw; height: 38vw; }
       .texto-cumple { font-size: 1.06em; }
-      .espacio-capibaras { height: 76vw; min-height: 170px; }
+      .espacio-capibaras { height: 40vw; min-height: 70px; }
       .evento-info { margin-top: 15px; }
-      .btn.fiesta { font-size: 1.06em; }
+      .subfrase-grande-rosa { font-size: 1.13em; }
+      .botones-cumple { max-width: 98vw; }
     }
   </style>
 </head>
@@ -320,7 +306,7 @@
   <!-- Texto de cumpleaños: solo nombre y edad -->
   <div class="texto-cumple">
     <span class="nombres">Julia & Lola 🎈</span>
-    <span class="cumple-edad">✨ ¡Cumplimos 10 años! ✨</span>
+    <span class="cumple-edad">¡Cumplimos 10 años!</span>
   </div>
 
   <!-- Espacio invisible para los capibaras -->
@@ -338,9 +324,11 @@
       Calle Hispalis, 2 (Bollullos de la Mitación)
     </div>
     <div class="countdown" id="countdown"></div>
-    <button class="btn fiesta" id="botonFiesta">🎵 Pulsa aquí para que comience la fiesta 🎉</button>
-    <a class="btn" href="https://maps.app.goo.gl/aKN1YwvMK49eKKT98" target="_blank">📍 Cómo llegar</a>
-    <a class="btn whatsapp" href="https://wa.me/34627685889?text=🎉%20Hola!%20Confirmamos%20nuestra%20asistencia%20al%20cumple%20de%20Julia%20y%20Lola.%20¡Nos%20vemos%20allí!%20😊" target="_blank">💬 Confirmar asistencia</a>
+    <div class="botones-cumple">
+      <button class="btn fiesta" id="botonFiesta">🎵 Pulsa aquí para que comience la fiesta 🎉</button>
+      <a class="btn" href="https://maps.app.goo.gl/aKN1YwvMK49eKKT98" target="_blank">📍 Cómo llegar</a>
+      <a class="btn whatsapp" href="https://wa.me/34627685889?text=🎉%20Hola!%20Confirmamos%20nuestra%20asistencia%20al%20cumple%20de%20Julia%20y%20Lola.%20¡Nos%20vemos%20allí!%20😊" target="_blank">💬 Confirmar asistencia</a>
+    </div>
   </div>
 
   <!-- Cuenta atrás JS -->
@@ -385,7 +373,6 @@
 
   <!-- Confetti, Fuegos Artificiales y Cumpleaños Feliz JS -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-  <!-- USA TU NUEVA CANCIÓN -->
   <audio id="cumpleAudio" preload="auto" src="audio1.mp3"></audio>
   <script>
     const botonFiesta = document.getElementById('botonFiesta');
@@ -426,4 +413,3 @@
   </script>
 </body>
 </html>
-
