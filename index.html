@@ -27,8 +27,8 @@
     }
     .corazon {
       position: absolute;
-      font-size: 1.3em;
-      opacity: 0.47;
+      font-size: 1.2em;
+      opacity: 0.28;
       animation: caer 7s linear infinite;
       pointer-events: none;
       user-select: none;
@@ -38,7 +38,7 @@
     }
     @keyframes caer {
       0% { transform: translateY(-10vh) scale(1) rotate(-4deg); opacity: 0.5;}
-      40% { opacity: 0.73;}
+      40% { opacity: 0.6;}
       100% { transform: translateY(104vh) scale(0.95) rotate(6deg); opacity: 0;}
     }
     .fotos-cumple {
@@ -75,16 +75,33 @@
       text-shadow: 1px 1px 2px #fff9, 0 2px 8px #fff8;
       line-height: 1.15;
     }
-    .texto-cumple .nombres {
+    .nombres {
       font-size: 1.65em;
       font-weight: 700;
       display: block;
-      color: #ff469e;
       letter-spacing: 1px;
       margin-bottom: 0px;
+      /* No color aquí: color por spans internos */
+    }
+    .nombre-julia {
+      color: #ff469e;
+      font-weight: 700;
+    }
+    .nombre-lola {
+      color: #ffb968;
+      font-weight: 700;
+    }
+    .nombre-and {
+      background: linear-gradient(90deg, #ff469e 0%, #ffb968 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 900;
+      font-size: 1.1em;
+      padding: 0 0.11em;
     }
     .texto-cumple .cumple-edad {
-      font-size: 2.1em; /* Más pequeño para una línea pero sigue muy grande */
+      font-size: 2em;
       display: block;
       color: #ff1da7;
       font-weight: bold;
@@ -92,38 +109,38 @@
       padding: 0.12em 0.1em;
       border-radius: 0;
       letter-spacing: 1.5px;
-      white-space: nowrap; /* Obliga a una sola línea */
+      white-space: nowrap; /* una línea */
       overflow: hidden;
       text-overflow: ellipsis;
       text-shadow:
-        0 0 24px #ffb3f7,
-        0 0 40px #ffb4e2,
-        0 0 70px #ff79c8,
-        0 0 80px #ff41b6,
+        0 0 18px #ffb3f7,
+        0 0 26px #ffb4e2,
+        0 0 48px #ff79c8,
+        0 0 56px #ff41b6,
         0 2px 22px #ffe7fa,
-        0 0 90px #ff41b6cc,
+        0 0 80px #ff41b6cc,
         0 0 8px #fff,
         1px 1px 0 #fff;
-      animation: palpitarBoton 1.5s infinite cubic-bezier(.4,1.5,.7,1), neonCumple 1.3s infinite alternate;
+      animation: palpitarBoton 1.3s infinite cubic-bezier(.4,1.5,.7,1), neonCumple 1.1s infinite alternate;
     }
     @keyframes neonCumple {
       0%,100% {
         text-shadow:
-          0 0 24px #ffb3f7,
-          0 0 40px #ffb4e2,
-          0 0 70px #ff79c8,
-          0 0 80px #ff41b6,
+          0 0 18px #ffb3f7,
+          0 0 26px #ffb4e2,
+          0 0 48px #ff79c8,
+          0 0 56px #ff41b6,
           0 2px 22px #ffe7fa,
-          0 0 90px #ff41b6cc,
+          0 0 80px #ff41b6cc,
           0 0 8px #fff,
           1px 1px 0 #fff;
         color: #ff1da7;
       }
       50% {
         text-shadow:
-          0 0 38px #ffb3f7,
-          0 0 86px #ea8fff,
-          0 0 80px #ff79c8,
+          0 0 34px #ffb3f7,
+          0 0 46px #ea8fff,
+          0 0 60px #ff79c8,
           0 2px 32px #ffe7fa,
           0 0 110px #ff41b6cc,
           1px 1px 0 #fff;
@@ -138,18 +155,94 @@
     }
     .espacio-capibaras {
       width: 100%;
-      height: 60vw; /* Más pequeño para que no lo tape */
+      height: 60vw; /* Menos espacio para que no tape nada */
       min-height: 130px;
       max-height: 210px;
       pointer-events: none;
       user-select: none;
+    }
+    .zona-final {
+      width: 100%;
+      max-width: 430px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 0;
+      background: none !important;
+    }
+    .evento-info {
+      font-size: 1.14rem;
+      font-weight: 600;
+      letter-spacing: 0.1px;
+      margin-bottom: 18px;
+      margin-top: 12px;
+      text-align: center;
+      text-shadow: 1px 1px 2px #fffdf6c5;
+      background: none !important;
+      color: #a04a3c;
+    }
+    .countdown {
+      font-size: 1.12em;
+      font-weight: bold;
+      color: #ff3d77;
+      margin-bottom: 18px;
+      text-shadow: 0 0 8px #fff8, 0 1px 3px #ffd;
+      background: none !important;
+    }
+    .botones-cumple {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 13px;
+      width: 100%;
+      max-width: 340px;
+      margin: 0 auto 0 auto;
+      margin-bottom: 24px;
+    }
+    .btn {
+      background: linear-gradient(90deg, #ffb968 0%, #ff66ad 100%);
+      color: white;
+      text-decoration: none;
+      padding: 14px 22px;
+      border-radius: 30px;
+      display: block;
+      font-size: 1.13em;
+      font-weight: 700;
+      user-select: none;
+      border: none;
+      width: 100%;
+      box-sizing: border-box;
+      transition: background .2s;
+      text-align: center;
+      box-shadow: 0 0 25px #ffb96877, 0 0 2px #fff, 0 0 30px #ffb96899;
+      animation: palpitarBoton 1.3s infinite, glow 1.2s infinite alternate;
+      cursor: pointer;
+    }
+    @keyframes glow {
+      0%   { box-shadow: 0 0 25px #ffb96877, 0 0 2px #fff, 0 0 30px #ffb96899;}
+      100% { box-shadow: 0 0 38px #ffb968cc, 0 0 16px #fff5, 0 0 55px #fff2;}
+    }
+    .btn.whatsapp {
+      background: linear-gradient(90deg, #ff66ad 0%, #ffb968 100%);
+      border: 2px solid #ff6995;
+      box-shadow: 0 0 28px #ffb96855, 0 0 12px #ff699577;
+      animation: palpitarBoton 1.3s infinite, glow 1.2s infinite alternate;
+    }
+    .btn.fiesta {
+      background: linear-gradient(90deg, #ffe168 0%, #fd4eff 100%);
+      border: 2px solid #fd9cfa;
+      color: #fff;
+      font-size: 1.13em;
+      box-shadow: 0 0 38px #fd4eff55, 0 0 15px #ffe16888;
+      animation: palpitarBoton 1.3s infinite, glow 1.2s infinite alternate;
     }
     .subfrase-grande-rosa {
       font-size: 2em;
       font-weight: 900;
       width: 99vw;
       max-width: 98vw;
-      margin: 14px auto 10px auto;
+      margin: 36px auto 18px auto; /* más abajo */
       color: #ff3d8b;
       text-align: center;
       letter-spacing: 1px;
@@ -206,82 +299,6 @@
       56% { transform: translateX(-1px);}
       74% { transform: translateX(1px);}
     }
-    .zona-final {
-      width: 100%;
-      max-width: 430px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-top: 0;
-      background: none !important;
-    }
-    .evento-info {
-      font-size: 1.14rem;
-      font-weight: 600;
-      letter-spacing: 0.1px;
-      margin-bottom: 18px;
-      margin-top: 12px;
-      text-align: center;
-      text-shadow: 1px 1px 2px #fffdf6c5;
-      background: none !important;
-      color: #a04a3c;
-    }
-    .countdown {
-      font-size: 1.12em;
-      font-weight: bold;
-      color: #ff3d77;
-      margin-bottom: 18px;
-      text-shadow: 0 0 8px #fff8, 0 1px 3px #ffd;
-      background: none !important;
-    }
-    .botones-cumple {
-      display: flex;
-      flex-direction: column;
-      align-items: stretch;
-      gap: 13px;
-      width: 100%;
-      max-width: 340px;
-      margin: 0 auto 0 auto;
-      margin-bottom: 14px;
-    }
-    .btn {
-      background: linear-gradient(90deg, #ffb968 0%, #ff66ad 100%);
-      color: white;
-      text-decoration: none;
-      padding: 14px 22px;
-      border-radius: 30px;
-      display: block;
-      font-size: 1.13em;
-      font-weight: 700;
-      user-select: none;
-      border: none;
-      width: 100%;
-      box-sizing: border-box;
-      transition: background .2s;
-      text-align: center;
-      box-shadow: 0 0 25px #ffb96877, 0 0 2px #fff, 0 0 30px #ffb96899;
-      animation: palpitarBoton 1.3s infinite, glow 1.2s infinite alternate;
-      cursor: pointer;
-    }
-    @keyframes glow {
-      0%   { box-shadow: 0 0 25px #ffb96877, 0 0 2px #fff, 0 0 30px #ffb96899;}
-      100% { box-shadow: 0 0 38px #ffb968cc, 0 0 16px #fff5, 0 0 55px #fff2;}
-    }
-    .btn.whatsapp {
-      background: linear-gradient(90deg, #ff66ad 0%, #ffb968 100%);
-      border: 2px solid #ff6995;
-      box-shadow: 0 0 28px #ffb96855, 0 0 12px #ff699577;
-      animation: palpitarBoton 1.3s infinite, glow 1.2s infinite alternate;
-    }
-    .btn.fiesta {
-      background: linear-gradient(90deg, #ffe168 0%, #fd4eff 100%);
-      border: 2px solid #fd9cfa;
-      color: #fff;
-      font-size: 1.13em;
-      box-shadow: 0 0 38px #fd4eff55, 0 0 15px #ffe16888;
-      animation: palpitarBoton 1.3s infinite, glow 1.2s infinite alternate;
-    }
     @media (max-width: 600px) {
       .fotos-cumple { margin-top: 39vw; }
       .fotos-cumple img { width: 43vw; height: 38vw; }
@@ -305,17 +322,16 @@
 
   <!-- Texto de cumpleaños: solo nombre y edad -->
   <div class="texto-cumple">
-    <span class="nombres">Julia & Lola 🎈</span>
+    <span class="nombres">
+      <span class="nombre-julia">Julia</span>
+      <span class="nombre-and">&</span>
+      <span class="nombre-lola">Lola</span> 🎈
+    </span>
     <span class="cumple-edad">¡Cumplimos 10 años!</span>
   </div>
 
   <!-- Espacio invisible para los capibaras -->
   <div class="espacio-capibaras"></div>
-
-  <!-- Frase central bajo capibaras, ROSA FUERTE, SIEMPRE ENTERA Y PARPADEO NEÓN -->
-  <div class="subfrase-grande-rosa">
-    ¡Celebra con nosotras una tarde llena de alegría y capibaras! 🎉
-  </div>
 
   <!-- Bloque final: dirección, botones, cuenta atrás -->
   <div class="zona-final">
@@ -329,6 +345,11 @@
       <a class="btn" href="https://maps.app.goo.gl/aKN1YwvMK49eKKT98" target="_blank">📍 Cómo llegar</a>
       <a class="btn whatsapp" href="https://wa.me/34627685889?text=🎉%20Hola!%20Confirmamos%20nuestra%20asistencia%20al%20cumple%20de%20Julia%20y%20Lola.%20¡Nos%20vemos%20allí!%20😊" target="_blank">💬 Confirmar asistencia</a>
     </div>
+  </div>
+
+  <!-- Frase central bajo capibaras, ROSA FUERTE, SIEMPRE ENTERA Y PARPADEO NEÓN -->
+  <div class="subfrase-grande-rosa">
+    ¡Celebra con nosotras una tarde llena de alegría y capibaras! 🎉
   </div>
 
   <!-- Cuenta atrás JS -->
@@ -360,15 +381,15 @@
       const corazon = document.createElement('span');
       corazon.className = 'corazon';
       corazon.style.left = (Math.random()*100)+'vw';
-      corazon.style.fontSize = (1.1 + Math.random()*0.6)+'em';
-      corazon.style.animationDuration = (5.5 + Math.random()*2.5)+'s';
+      corazon.style.fontSize = (1.1 + Math.random()*0.2)+'em'; // menos tamaño variable
+      corazon.style.animationDuration = (5.8 + Math.random()*2.5)+'s';
       corazon.textContent = emojis[Math.floor(Math.random()*emojis.length)];
-      corazon.style.opacity = 0.32 + Math.random()*0.23;
+      corazon.style.opacity = 0.28 + Math.random()*0.1; // menos brillo
       corazonesDiv.appendChild(corazon);
       setTimeout(()=>corazon.remove(), 9000);
     }
-    setInterval(creaCorazon, 1100);
-    for(let i=0; i<5; i++) setTimeout(creaCorazon, i*400);
+    setInterval(creaCorazon, 1800); // menos corazones
+    for(let i=0; i<2; i++) setTimeout(creaCorazon, i*700);
   </script>
 
   <!-- Confetti, Fuegos Artificiales y Cumpleaños Feliz JS -->
