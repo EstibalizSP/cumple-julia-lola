@@ -110,7 +110,7 @@
       pointer-events: none;
       user-select: none;
     }
-    /* --- Frase en rosa fuerte, SIEMPRE ENTERA --- */
+    /* --- Frase en rosa fuerte, SIEMPRE ENTERA, con efecto neón/parpadeo --- */
     .subfrase-grande-rosa {
       font-size: 2em;
       font-weight: 900;
@@ -121,8 +121,8 @@
       text-align: center;
       letter-spacing: 1px;
       text-shadow:
-        0 2px 16px #fff,
-        0 1px 7px #ffd,
+        0 2px 18px #fff,
+        0 1px 8px #ffd,
         1px 1px 0 #fff;
       line-height: 1.13;
       font-family: 'Fredoka', sans-serif;
@@ -131,6 +131,41 @@
       background: none !important;
       white-space: normal;
       overflow-wrap: break-word;
+      animation: brillaNeon 2.3s infinite alternate;
+    }
+    @keyframes brillaNeon {
+      0%,100% {
+        text-shadow:
+          0 2px 20px #fff,
+          0 1px 8px #ffd,
+          1px 1px 0 #fff,
+          0 0 0 #ff47c7;
+        color: #ff3d8b;
+      }
+      30% {
+        text-shadow:
+          0 2px 26px #fff5,
+          0 1px 13px #ffd8,
+          1px 1px 0 #fff,
+          0 0 16px #ff47c7;
+        color: #ff63a5;
+      }
+      55% {
+        text-shadow:
+          0 2px 34px #fffbe9,
+          0 1px 16px #ffe5,
+          1px 1px 0 #fff,
+          0 0 28px #fd3a69;
+        color: #fd3a69;
+      }
+      80% {
+        text-shadow:
+          0 2px 16px #fff,
+          0 1px 8px #ffd,
+          1px 1px 0 #fff,
+          0 0 0 #ff47c7;
+        color: #ff3d8b;
+      }
     }
     @media (max-width: 600px) {
       .subfrase-grande-rosa {
@@ -238,7 +273,7 @@
   <!-- Espacio invisible para los capibaras -->
   <div class="espacio-capibaras"></div>
 
-  <!-- Frase central bajo capibaras, ROSA FUERTE, SIEMPRE ENTERA -->
+  <!-- Frase central bajo capibaras, ROSA FUERTE, SIEMPRE ENTERA Y PARPADEO NEÓN -->
   <div class="subfrase-grande-rosa">
     ¡Celebra con nosotras una tarde llena de alegría y capibaras! 🎉
   </div>
