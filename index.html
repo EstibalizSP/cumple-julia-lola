@@ -43,8 +43,8 @@
       display: flex;
       justify-content: center;
       gap: 10px;
-      margin-top: 17vw; /* MÁS ABAJO */
-      margin-bottom: 2vw;
+      margin-top: 17vw;
+      margin-bottom: 0.6vw;
       width: 100%;
       max-width: 330px;
       z-index: 2;
@@ -62,19 +62,19 @@
       background: #fff7;
     }
     .texto-cumple {
-      font-size: 1.14em;
+      font-size: 1.18em;
       font-weight: 600;
       letter-spacing: 0.2px;
       text-align: center;
       max-width: 330px;
       margin: 0 auto;
-      margin-bottom: 1vw;
+      margin-bottom: 0.7vw;
       background: none !important;
       text-shadow: 1px 1px 2px #fff9, 0 2px 8px #fff8;
       line-height: 1.15;
     }
     .nombres {
-      font-size: 1.38em;
+      font-size: 1.44em;
       font-weight: 700;
       display: block;
       letter-spacing: 1px;
@@ -92,7 +92,7 @@
       padding: 0 0.11em;
     }
     .texto-cumple .cumple-edad {
-      font-size: 1.12em;
+      font-size: 2em; /* MÁS GRANDE */
       display: block;
       color: #ff1da7;
       font-weight: bold;
@@ -145,17 +145,15 @@
       65% { transform: scale(1.01);}
       80% { transform: scale(1.01);}
     }
-
-    /* GRAN ESPACIO para el fondo */
+    /* GRAN ESPACIO para el fondo (VACÍO) */
     .espacio-fondo {
       width: 100%;
-      height: 19vw; /* Ajusta esto para que quede bien con TU fondo. Sube o baja según veas */
+      height: 19vw; /* Ajusta según el fondo; puedes probar con 15vw, 120px, etc. */
       min-height: 80px;
       max-height: 180px;
     }
-
     .subfrase-grande-rosa {
-      font-size: 1.05em;
+      font-size: 1.09em;
       font-weight: 800;
       width: 97vw;
       max-width: 320px;
@@ -260,13 +258,11 @@
   <!-- Lluvia de corazoncitos -->
   <div class="corazones-cayendo" id="corazones"></div>
 
-  <!-- Fotos de Julia y Lola -->
+  <!-- FOTOS, NOMBRES Y CUMPLEAÑOS -->
   <div class="fotos-cumple">
     <img src="julia1.jpg" alt="Foto de Julia" />
     <img src="lola.jpg" alt="Foto de Lola" />
   </div>
-
-  <!-- Texto de cumpleaños: solo nombre y edad -->
   <div class="texto-cumple">
     <span class="nombres">
       <span class="nombre-julia">Julia</span>
@@ -276,15 +272,15 @@
     <span class="cumple-edad">¡Cumplimos 10 años!</span>
   </div>
 
-  <!-- GRAN ESPACIO VACÍO para respetar el dibujo de fondo -->
+  <!-- ESPACIO VACÍO -->
   <div class="espacio-fondo"></div>
 
-  <!-- Frase rosa fuerte, AHORA encima de la zona final -->
+  <!-- FRASE INVITACIÓN -->
   <div class="subfrase-grande-rosa">
     ¡Celebra con nosotras una tarde llena de alegría y capibaras! 🎉
   </div>
 
-  <!-- Zona final: dirección, cuenta atrás, botones -->
+  <!-- ZONA FINAL -->
   <div class="zona-final">
     <div class="evento-info">
       16 Junio - 17:00 h<br>
