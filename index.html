@@ -17,119 +17,195 @@
       overflow-x: hidden;
       min-height: 100vh;
     }
-    .fotos-ninas {
+    /* --- Bloque fotos + texto cumple --- */
+    .bloque-cumple {
+      margin-top: 27vw; /* ajusta según fondo3 */
       display: flex;
-      justify-content: center;
-      gap: 13px;
-      margin-top: 31vw; /* las fotos más abajo o más arriba */
-      margin-bottom: 14vw; /* Espacio debajo de las fotos para que el cuadro blanco no tape los capibaras */
-      max-width: 360px;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
       z-index: 2;
       position: relative;
     }
-    .fotos-ninas img {
-      width: 42vw;
-      max-width: 140px;
-      height: 38vw;
-      max-height: 165px;
+    .fotos {
+      display: flex;
+      justify-content: center;
+      gap: 13px;
+      width: 100%;
+      max-width: 340px;
+    }
+    .fotos img {
+      width: 41vw;
+      max-width: 135px;
+      height: 37vw;
+      max-height: 155px;
       object-fit: cover;
       border-radius: 18px;
       border: 4px solid #ff6995;
       box-shadow: 0 0 12px rgba(255,105,149,0.5);
       background: #fff7;
     }
-    .content-wrapper {
-      max-width: 430px;
-      margin: 0 auto;
-      background: rgba(255,255,255,0.79); /* más transparente */
-      border-radius: 20px;
-      padding: 26px 7vw 30px 7vw;
-      box-shadow: 0 4px 14px 0px #ffd1e666;
+    .texto-cumple {
+      font-size: 1.21em;
+      font-weight: 600;
+      margin-top: 2vw;
+      background: rgba(255,255,255,0.68);
+      border-radius: 13px;
+      padding: 10px 15px 7px 15px;
+      box-shadow: 0 2px 8px #ffd1e649;
+      letter-spacing: 0.2px;
       text-align: center;
-      z-index: 1;
-      position: relative;
+      max-width: 340px;
+      margin-bottom: 0;
     }
-    h1 {
-      margin: 0 0 7px 0;
-      font-size: 2em;
+    .texto-cumple .nombres {
+      font-size: 1.6em;
       font-weight: 700;
+      margin-bottom: 5px;
+      display: block;
+      color: #543520;
       letter-spacing: 1px;
     }
-    h2 {
-      margin: 0 0 9px 0;
-      font-size: 1.3em;
-      font-weight: 500;
+    .texto-cumple .cumple-edad {
+      font-size: 1.15em;
+      display: block;
+      color: #7d4b2a;
+      margin-bottom: 5px;
     }
-    p {
-      font-size: 1.13rem;
-      margin: 0.5em 0 1em 0;
+    .texto-cumple .subfrase {
+      font-size: 0.99em;
       font-weight: 400;
+      color: #65492e;
+    }
+
+    /* --- Margen para dejar libre la zona del dibujo capibaras --- */
+    .espacio-capibaras {
+      width: 100%;
+      height: 27vw; /* ajusta según el alto real del dibujo en tu fondo */
+      min-height: 112px;
+      max-height: 190px;
+      pointer-events: none;
+      user-select: none;
+    }
+    /* --- Zona inferior: info, botones, cuenta atrás --- */
+    .zona-final {
+      width: 100%;
+      max-width: 410px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 0;
+      /* Sin fondo, solo flotando */
     }
     .evento-info {
-      margin-top: 13px;
-      margin-bottom: 18px;
-      font-size: 1.08rem;
+      font-size: 1.13rem;
       font-weight: 600;
       letter-spacing: 0.1px;
+      margin-bottom: 16px;
+      margin-top: 0;
+      text-align: center;
+      text-shadow: 1px 1px 2px #fffdf6c5;
+    }
+    .countdown {
+      font-size: 1.15em;
+      font-weight: bold;
+      color: #ff6995;
+      margin-bottom: 18px;
+      text-shadow: 1px 1px 2px #fffdf6e0;
     }
     .btn {
       background-color: #ff6995;
       color: white;
       text-decoration: none;
-      padding: 14px 24px;
+      padding: 16px 28px;
       border-radius: 30px;
-      display: inline-block;
-      font-size: 1.11em;
-      animation: pulse 1.5s infinite;
-      margin: 14px 7px 0;
-      box-shadow: 0 0 15px #ff6995;
+      display: block;
+      font-size: 1.15em;
+      margin: 15px 0 0 0;
+      box-shadow: 0 0 18px #ff699577;
       font-weight: 700;
       user-select: none;
       border: none;
+      width: 90%;
+      max-width: 320px;
       transition: background .2s;
+      text-align: center;
     }
     .btn:active {
       background: #ff4981;
     }
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.08); }
+    .btn.whatsapp {
+      background: #fff;
+      color: #ff6995;
+      border: 2px solid #ff6995;
+      margin-top: 14px;
+      box-shadow: 0 0 15px #ff699566;
     }
     @media (max-width: 500px) {
-      .content-wrapper { padding-left: 5vw; padding-right: 5vw; }
-      .fotos-ninas img { width: 42vw; height: 37vw; }
-      .fotos-ninas {
-        margin-top: 32vw;
-        margin-bottom: 18vw; /* más espacio si hace falta */
-      }
+      .bloque-cumple { margin-top: 28vw; }
+      .fotos img { width: 42vw; height: 37vw; }
+      .texto-cumple { font-size: 1.11em; }
+      .espacio-capibaras { height: 27vw; min-height: 100px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- FOTOS DE LAS NIÑAS -->
-  <div class="fotos-ninas">
-    <img src="julia.jpg" alt="Foto de Julia" />
-    <img src="lola.jpg" alt="Foto de Lola" />
+  <!-- Bloque arriba: fotos + texto de cumple -->
+  <div class="bloque-cumple">
+    <div class="fotos">
+      <img src="julia.jpg" alt="Foto de Julia" />
+      <img src="lola.jpg" alt="Foto de Lola" />
+    </div>
+    <div class="texto-cumple">
+      <span class="nombres">Julia & Lola 🎈</span>
+      <span class="cumple-edad">✨ ¡Cumplimos 10 años! ✨</span>
+      <span class="subfrase">¡Celebra con nosotras una tarde llena de alegría y capibaras!</span>
+    </div>
   </div>
 
-  <!-- ESPACIO INVISIBLE PARA RESPETAR LOS CAPIBARAS DEL FONDO -->
-  <!-- (El margin-bottom de .fotos-ninas ya hace esto) -->
+  <!-- Espacio invisible para dejar visible la zona de los capibaras del fondo -->
+  <div class="espacio-capibaras"></div>
 
-  <!-- CUADRO BLANCO DE INFORMACIÓN (TODO EL TEXTO VA AQUÍ, DESPUÉS DE LOS CAPIBARAS DEL FONDO) -->
-  <div class="content-wrapper">
-    <h1>🎈 Julia & Lola 🎈</h1>
-    <h2>✨ ¡Cumplimos 10 años! ✨</h2>
-    <p>¡Celebra con nosotras una tarde llena de alegría y capibaras!</p>
-
+  <!-- Zona inferior: dirección, botones, cuenta regresiva -->
+  <div class="zona-final">
     <div class="evento-info">
-      🗓 16 Junio - 17:00 h<br>
-      📍 Calle Hispalis, 2 (Bollullos de la Mitación)
+      <span>📅 16 Junio - 17:00 h<br>
+      📍 Calle Hispalis, 2 (Bollullos de la Mitación)</span>
     </div>
 
-    <a class="btn" href="https://maps.app.goo.gl/">📍 Cómo llegar</a>
-    <a class="btn" href="https://wa.me/34627685889?text=🎉%20Hola!%20Confirmamos%20nuestra%20asistencia%20al%20cumple%20de%20Julia%20y%20Lola.%20¡Nos%20vemos%20allí!%20😊">💬 Confirmar asistencia</a>
+    <div class="countdown" id="countdown"></div>
+
+    <a class="btn" href="https://maps.app.goo.gl/">
+      📍 Cómo llegar
+    </a>
+    <a class="btn whatsapp" href="https://wa.me/34627685889?text=🎉%20Hola!%20Confirmamos%20nuestra%20asistencia%20al%20cumple%20de%20Julia%20y%20Lola.%20¡Nos%20vemos%20allí!%20😊" target="_blank">
+      💬 Confirmar asistencia
+    </a>
   </div>
 
+  <!-- Cuenta atrás JS -->
+  <script>
+    // Fecha del evento (año, mes-1, día, hora, min)
+    const eventDate = new Date(2024, 5, 16, 17, 0, 0); // 16 junio 2024, 17:00
+    function updateCountdown() {
+      const now = new Date();
+      const diff = eventDate - now;
+      if(diff > 0) {
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const mins = Math.floor((diff / (1000 * 60)) % 60);
+        const secs = Math.floor((diff / 1000) % 60);
+        document.getElementById('countdown').textContent =
+          `Faltan ${days} días, ${hours} h, ${mins} min, ${secs} s`;
+      } else {
+        document.getElementById('countdown').textContent = "¡Es hoy!";
+      }
+    }
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
 </body>
 </html>
+
