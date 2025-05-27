@@ -23,28 +23,21 @@
       font-size: 1.1rem;
       margin: 0.5em 0 1em;
     }
-    .background-strip {
-      max-width: 460px;
-      margin: 0 auto;
-      height: 120px; /* altura de la franja */
-      background: linear-gradient(90deg, #fceabb, #f8b500, #ff8aad);
-      border-radius: 20px 20px 0 0; /* bordes redondeados arriba */
-      /* si quieres puedes quitar border-radius para que no se note la separación */
-    }
     .content-wrapper {
       max-width: 460px;
       margin: 0 auto;
       padding: 15px 20px 30px;
-      background: rgba(255 255 255 / 0.85);
+      /* Fondo totalmente transparente, sin sombra ni bordes */
+      background: transparent;
       box-shadow: none;
-      border-radius: 0 0 20px 20px; /* bordes redondeados abajo */
+      border-radius: 0;
     }
     .photo-container {
       display: flex;
       justify-content: center;
       gap: 15px;
       margin-bottom: 15px;
-      margin-top: 20px; /* bajar un poco fotos */
+      margin-top: 100px; /* más margen para bajar fotos */
       flex-wrap: nowrap;
     }
     .photo-container img {
@@ -92,8 +85,6 @@
   </style>
 </head>
 <body>
-
-  <div class="background-strip"></div>
 
   <div class="content-wrapper">
     <div class="photo-container">
