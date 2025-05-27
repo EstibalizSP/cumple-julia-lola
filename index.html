@@ -6,36 +6,27 @@
   <title>🎉 Cumple Julia & Lola 🎉</title>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&display=swap" rel="stylesheet" />
   <style>
-    /* Fondo fijo con capibaras */
     body {
       margin: 0;
       padding: 0;
       font-family: 'Fredoka', sans-serif;
-      background: url('fondo.png') no-repeat center center fixed;
+      background: url('fondo.png') no-repeat center top fixed;
       background-size: cover;
       color: #5c3b26;
       text-shadow: 1px 1px 2px #fff8e7;
       overflow-x: hidden;
     }
 
-    /* Contenedor principal con fondo semitransparente */
-    .content-wrapper {
-      max-width: 460px;
-      margin: 20px auto 40px;
-      background: rgba(255, 255, 255, 0.65); /* fondo transparente */
-      border-radius: 20px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      padding: 20px;
-      text-align: center;
-    }
-
-    /* Fotos de las niñas justo arriba */
+    /* Fotos justo debajo del fondo (header) */
     .photo-container {
       display: flex;
       justify-content: center;
       gap: 15px;
-      margin-bottom: 20px;
+      margin: 20px auto 10px;
+      max-width: 460px;
       flex-wrap: wrap;
+      z-index: 1;
+      position: relative;
     }
     .photo-container img {
       width: 45%;
@@ -47,17 +38,29 @@
       border: 4px solid #ff6995;
     }
 
+    /* Contenedor blanco para texto y botones */
+    .content-wrapper {
+      max-width: 460px;
+      margin: 0 auto 40px;
+      background: #fff; /* fondo blanco sólido */
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 20px;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
     h1, h2 {
       margin: 0.2em 0;
       font-weight: 700;
     }
-
     p {
       font-size: 1.1rem;
       margin: 0.5em 0 1em;
+      color: #5c3b26;
+      text-shadow: none;
     }
-
-    /* Botones estilo móvil */
     .btn {
       background-color: #ff6995;
       color: white;
@@ -73,13 +76,10 @@
       max-width: 260px;
       user-select: none;
     }
-
     @keyframes pulse {
       0%, 100% { transform: scale(1); }
       50% { transform: scale(1.1); }
     }
-
-    /* Corazones animados */
     .heart {
       position: fixed;
       top: -20px;
@@ -88,30 +88,39 @@
       animation: fall 6s linear infinite;
       opacity: 0.8;
       pointer-events: none;
-      z-index: -1;
+      z-index: 0;
     }
-
     @keyframes fall {
       to {
         transform: translateY(110vh) rotate(360deg);
         opacity: 0;
       }
     }
-
+    #countdown {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin: 10px 0 20px;
+      color: #5c3b26;
+      text-shadow: none;
+    }
   </style>
 </head>
 <body>
 
-  <div class="content-wrapper">
-    <div class="photo-container">
-      <img src="julia.jpg" alt="Foto de Julia" />
-      <img src="lola.jpg" alt="Foto de Lola" />
-    </div>
+  <!-- Fotos justo debajo del fondo -->
+  <div class="photo-container">
+    <img src="julia.jpg" alt="Foto de Julia" />
+    <img src="lola.jpg" alt="Foto de Lola" />
+  </div>
 
+  <!-- Contenedor blanco con texto y botones -->
+  <div class="content-wrapper">
     <h1>🎈 Julia & Lola 🎈</h1>
 
     <h2>✨ ¡Cumplimos 10 años! ✨</h2>
     <p>¡Celebra con nosotras una tarde llena de alegría y capibaras kawaii!</p>
+
+    <div id="countdown">Cargando cuenta regresiva...</div>
 
     <p><strong>🗓 16 Junio - 17:00 h</strong></p>
     <p><strong>📍 Calle Hispalis, 2 (Bollullos de la Mitación)</strong></p>
@@ -120,7 +129,10 @@
     <a class="btn" href="https://wa.me/34627685889?text=🎉%20Hola!%20Confirmamos%20nuestra%20asistencia%20al%20cumple%20de%20Julia%20y%20Lola.%20¡Nos%20vemos%20allí!%20😊">💬 Confirmar asistencia</a>
   </div>
 
+  <audio id="birthdaySong" src="cumpleaños-feliz.mp3" preload="auto"></audio>
+
   <script>
+    // Corazones animados
     function createHeart() {
       const heart = document.createElement('div');
       heart.classList.add('heart');
@@ -131,6 +143,36 @@
       setTimeout(() => heart.remove(), 6000);
     }
     setInterval(createHeart, 400);
+
+    // Música autoplay con fallback a interacción
+    window.addEventListener('load', () => {
+      const audio = document.getElementById('birthdaySong');
+      audio.play().catch(() => {
+        document.body.addEventListener('click', () => {
+          audio.play();
+        }, { once: true });
+      });
+    });
+
+    // Cuenta regresiva
+    const targetDate = new Date('2025-06-16T17:00:00');
+    function updateCountdown() {
+      const now = new Date();
+      const diff = targetDate - now;
+      if (diff <= 0) {
+        document.getElementById('countdown').textContent = '🎉 ¡Feliz cumpleaños Julia & Lola! 🎉';
+        clearInterval(timer);
+        return;
+      }
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+      document.getElementById('countdown').textContent =
+        `⏳ Faltan ${days}d ${hours}h ${minutes}m ${seconds}s para la fiesta`;
+    }
+    updateCountdown();
+    const timer = setInterval(updateCountdown, 1000);
   </script>
 
 </body>
