@@ -121,10 +121,10 @@
       text-align: center;
       letter-spacing: 1px;
       text-shadow:
-        0 0 20px #fff4fa,
-        0 0 45px #ff6fb8,
-        0 0 80px #fff2,
-        0 2px 18px #fff,
+        0 0 28px #fff,
+        0 0 60px #ffb3dd,
+        0 0 120px #fff0,
+        0 2px 22px #fff9,
         0 1px 8px #ffd,
         1px 1px 0 #fff,
         0 0 0 #ff47c7;
@@ -144,11 +144,241 @@
           0 1px 8px #ffd,
           1px 1px 0 #fff,
           0 0 0 #ff47c7,
-          0 0 30px #ff3d8b77;
+          0 0 40px #ff3d8b99;
         color: #ff3d8b;
       }
-      30% {
+      35% {
         text-shadow:
-          0 2px 26px #fff5,
-          0
+          0 2px 45px #fff8,
+          0 1px 18px #ffd,
+          1px 1px 0 #fff,
+          0 0 38px #ff47c7,
+          0 0 70px #ffb3dd;
+        color: #fd3a69;
+      }
+      60% {
+        text-shadow:
+          0 2px 80px #fffbe9,
+          0 1px 16px #ffe5,
+          1px 1px 0 #fff,
+          0 0 60px #ff47c7,
+          0 0 120px #ffb3dd66;
+        color: #ff63a5;
+      }
+    }
+    @keyframes shake {
+      0%,100% { transform: translateX(0);}
+      18% { transform: translateX(-1.2px);}
+      38% { transform: translateX(1.2px);}
+      56% { transform: translateX(-1px);}
+      74% { transform: translateX(1px);}
+    }
+    @media (max-width: 600px) {
+      .subfrase-grande-rosa {
+        font-size: 1.18em;
+        padding: 0 2vw;
+      }
+    }
+    .zona-final {
+      width: 100%;
+      max-width: 430px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 0;
+      background: none !important;
+    }
+    .evento-info {
+      font-size: 1.14rem;
+      font-weight: 600;
+      letter-spacing: 0.1px;
+      margin-bottom: 18px;
+      margin-top: 12px;
+      text-align: center;
+      text-shadow: 1px 1px 2px #fffdf6c5;
+      background: none !important;
+      color: #a04a3c;
+    }
+    .countdown {
+      font-size: 1.12em;
+      font-weight: bold;
+      color: #ff3d77;
+      margin-bottom: 18px;
+      text-shadow: 0 0 8px #fff8, 0 1px 3px #ffd;
+      background: none !important;
+    }
+    /* BOTONES PALPITANDO Y DEGRADADO */
+    .btn {
+      background: linear-gradient(90deg, #ffb968 0%, #ff66ad 100%);
+      color: white;
+      text-decoration: none;
+      padding: 16px 28px;
+      border-radius: 30px;
+      display: block;
+      font-size: 1.15em;
+      margin: 15px 0 0 0;
+      font-weight: 700;
+      user-select: none;
+      border: none;
+      width: 90%;
+      max-width: 320px;
+      transition: background .2s;
+      text-align: center;
+      box-shadow: 0 0 25px #ffb96877, 0 0 2px #fff, 0 0 30px #ffb96899;
+      animation: palpitarBoton 1.45s infinite, glow 1.2s infinite alternate;
+      cursor: pointer;
+    }
+    @keyframes palpitarBoton {
+      0%, 100% { transform: scale(1);}
+      25% { transform: scale(1.07);}
+      55% { transform: scale(1.04);}
+      70% { transform: scale(0.96);}
+    }
+    @keyframes glow {
+      0%   { box-shadow: 0 0 25px #ffb96877, 0 0 2px #fff, 0 0 30px #ffb96899;}
+      100% { box-shadow: 0 0 38px #ffb968cc, 0 0 16px #fff5, 0 0 55px #fff2;}
+    }
+    /* BOTÓN CONFIRMAR: degradado rosa-naranja */
+    .btn.whatsapp {
+      background: linear-gradient(90deg, #ff66ad 0%, #ffb968 100%);
+      color: white;
+      border: 2px solid #ff6995;
+      margin-top: 14px;
+      box-shadow: 0 0 28px #ffb96855, 0 0 12px #ff699577;
+      animation: palpitarBoton 1.45s infinite, glow2 1.3s infinite alternate;
+    }
+    /* BOTÓN FIESTA: degradado amarillo-rosa y diferente sombra */
+    .btn.fiesta {
+      background: linear-gradient(90deg, #ffe168 0%, #fd4eff 100%);
+      border: 2px solid #fd9cfa;
+      color: #fff;
+      font-size: 1.22em;
+      box-shadow: 0 0 38px #fd4eff55, 0 0 15px #ffe16888;
+      animation: palpitarBoton 1.05s infinite, glow2 1.5s infinite alternate;
+      margin-top: 20px;
+    }
+    @keyframes glow2 {
+      0%   { box-shadow: 0 0 30px #ffb96855, 0 0 15px #ffb96866, 0 0 12px #ff699577;}
+      100% { box-shadow: 0 0 42px #ffb968aa, 0 0 24px #fff8, 0 0 18px #ff699599;}
+    }
+    @media (max-width: 600px) {
+      .fotos-cumple { margin-top: 39vw; }
+      .fotos-cumple img { width: 43vw; height: 38vw; }
+      .texto-cumple { font-size: 1.06em; }
+      .espacio-capibaras { height: 76vw; min-height: 170px; }
+      .evento-info { margin-top: 15px; }
+      .btn.fiesta { font-size: 1.06em; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Lluvia de corazoncitos -->
+  <div class="corazones-cayendo" id="corazones"></div>
 
+  <!-- Fotos de Julia y Lola -->
+  <div class="fotos-cumple">
+    <img src="julia1.jpg" alt="Foto de Julia" />
+    <img src="lola.jpg" alt="Foto de Lola" />
+  </div>
+
+  <!-- Texto de cumpleaños: solo nombre y edad -->
+  <div class="texto-cumple">
+    <span class="nombres">Julia & Lola 🎈</span>
+    <span class="cumple-edad">✨ ¡Cumplimos 10 años! ✨</span>
+  </div>
+
+  <!-- Espacio invisible para los capibaras -->
+  <div class="espacio-capibaras"></div>
+
+  <!-- Frase central bajo capibaras, ROSA FUERTE, SIEMPRE ENTERA Y PARPADEO NEÓN -->
+  <div class="subfrase-grande-rosa">
+    ¡Celebra con nosotras una tarde llena de alegría y capibaras! 🎉
+  </div>
+
+  <!-- Bloque final: dirección, botones, cuenta atrás -->
+  <div class="zona-final">
+    <div class="evento-info">
+      16 Junio - 17:00 h<br>
+      Calle Hispalis, 2 (Bollullos de la Mitación)
+    </div>
+    <div class="countdown" id="countdown"></div>
+    <button class="btn fiesta" id="botonFiesta">🎊 Fiesta sorpresa</button>
+    <a class="btn" href="https://maps.app.goo.gl/">📍 Cómo llegar</a>
+    <a class="btn whatsapp" href="https://wa.me/34627685889?text=🎉%20Hola!%20Confirmamos%20nuestra%20asistencia%20al%20cumple%20de%20Julia%20y%20Lola.%20¡Nos%20vemos%20allí!%20😊" target="_blank">💬 Confirmar asistencia</a>
+  </div>
+
+  <!-- Cuenta atrás JS -->
+  <script>
+    const eventDate = new Date(2025, 5, 16, 17, 0, 0); // 16 junio 2025, 17:00
+    function updateCountdown() {
+      const now = new Date();
+      const diff = eventDate - now;
+      if(diff > 0) {
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const mins = Math.floor((diff / (1000 * 60)) % 60);
+        const secs = Math.floor((diff / 1000) % 60);
+        document.getElementById('countdown').textContent =
+          `Faltan ${days} días, ${hours} h, ${mins} min, ${secs} s`;
+      } else {
+        document.getElementById('countdown').textContent = "";
+      }
+    }
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
+
+  <!-- Corazoncitos JS (más sencillo/discreto) -->
+  <script>
+    const corazonesDiv = document.getElementById('corazones');
+    const emojis = ['💖','💗','💕'];
+    function creaCorazon() {
+      const corazon = document.createElement('span');
+      corazon.className = 'corazon';
+      corazon.style.left = (Math.random()*100)+'vw';
+      corazon.style.fontSize = (1.1 + Math.random()*0.6)+'em';
+      corazon.style.animationDuration = (5.5 + Math.random()*2.5)+'s';
+      corazon.textContent = emojis[Math.floor(Math.random()*emojis.length)];
+      corazon.style.opacity = 0.32 + Math.random()*0.23;
+      corazonesDiv.appendChild(corazon);
+      setTimeout(()=>corazon.remove(), 9000);
+    }
+    setInterval(creaCorazon, 1100); // menos frecuencia
+    for(let i=0; i<5; i++) setTimeout(creaCorazon, i*400);
+  </script>
+
+  <!-- Confetti, Fuegos Artificiales y Cumpleaños Feliz JS -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <audio id="cumpleAudio" src="https://cdn.pixabay.com/audio/2022/02/23/audio_115b9bfa31.mp3"></audio>
+  <script>
+    const botonFiesta = document.getElementById('botonFiesta');
+    const cumpleAudio = document.getElementById('cumpleAudio');
+
+    function lanzarConfetiYFuegos() {
+      // Confeti principal
+      confetti({
+        particleCount: 180,
+        spread: 90,
+        origin: { y: 0.6 }
+      });
+      // Fuegos artificiales
+      for (let i = 0; i < 7; i++) {
+        setTimeout(() => {
+          confetti({
+            particleCount: 70,
+            angle: 60 + Math.random() * 60,
+            spread: 90,
+            origin: { x: Math.random(), y: Math.random() * 0.5 }
+          });
+        }, 300 + i * 260);
+      }
+      // Música Cumpleaños Feliz
+      cumpleAudio.currentTime = 0;
+      cumpleAudio.play();
+    }
+
+    botonFiesta.addEventListener('click', lanzarConfetiYFuegos);
+  </script>
+</body>
+</html>
