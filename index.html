@@ -43,7 +43,7 @@
       display: flex;
       justify-content: center;
       gap: 10px;
-      margin-top: 55vw; /* Bajamos aún más las fotos */
+      margin-top: 45vw; /* Fotos un poco más arriba que antes */
       margin-bottom: 2vw;
       width: 100%;
       max-width: 330px;
@@ -239,7 +239,7 @@
       100% { box-shadow: 0 0 32px #ffb96899, 0 0 12px #fff4, 0 0 34px #ffd3;}
     }
     @media (max-width: 600px) {
-      .fotos-cumple { margin-top: 55vw; gap: 4vw; }
+      .fotos-cumple { margin-top: 35vw; gap: 4vw; }
       .fotos-cumple img { width: 48vw; height: 42vw; max-width: 160px; max-height: 170px; }
       .texto-cumple { font-size: 1.09em; }
       .subfrase-grande-rosa { font-size: 1em; margin: 14em auto 1.4em auto; }
@@ -312,7 +312,6 @@
       corazon.style.fontSize = (1.0 + Math.random()*0.2)+'em';
       corazon.style.animationDuration = (7.8 + Math.random()*2.5)+'s';
       corazon.textContent = emojis[Math.floor(Math.random()*emojis.length)];
-      corazon.style.opacity = 0.18 + Math.random()*0.14;
       corazonesDiv.appendChild(corazon);
       setTimeout(()=>corazon.remove(), 9500);
     }
