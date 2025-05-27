@@ -18,7 +18,7 @@
       min-height: 100vh;
       position: relative;
     }
-    /* --- Corazones flotantes --- */
+    /* --- Corazones flotantes (DISCRETOS) --- */
     .corazones-cayendo {
       pointer-events: none;
       position: fixed;
@@ -28,18 +28,20 @@
     }
     .corazon {
       position: absolute;
-      font-size: 2.2em;
-      opacity: 0.73;
-      animation: caer 5s linear infinite;
+      font-size: 1.3em;
+      opacity: 0.47;
+      animation: caer 7s linear infinite;
       pointer-events: none;
       user-select: none;
       will-change: transform, opacity;
-      filter: drop-shadow(0 1px 2px #fff4);
+      /* Sin sombra ni brillo */
+      filter: none;
+      text-shadow: none;
     }
     @keyframes caer {
-      0% { transform: translateY(-10vh) scale(1) rotate(-5deg); opacity: 0.75;}
-      50% { opacity: 1;}
-      100% { transform: translateY(105vh) scale(0.94) rotate(10deg); opacity: 0;}
+      0% { transform: translateY(-10vh) scale(1) rotate(-4deg); opacity: 0.5;}
+      40% { opacity: 0.73;}
+      100% { transform: translateY(104vh) scale(0.95) rotate(6deg); opacity: 0;}
     }
     /* --- Fotos de Julia y Lola --- */
     .fotos-cumple {
@@ -84,7 +86,6 @@
       letter-spacing: 1px;
       margin-bottom: 0px;
     }
-    /* PALPITANDO */
     .texto-cumple .cumple-edad {
       font-size: 1.19em;
       display: block;
@@ -92,7 +93,7 @@
       margin-bottom: 0px;
       animation: palpitar 1.35s infinite;
       animation-timing-function: cubic-bezier(.4,1.5,.7,1);
-      text-shadow: 0 0 18px #d1b6ff99, 1px 2px 6px #fff8;
+      text-shadow: 0 0 18px #d1b6ff33, 1px 2px 6px #fff6;
     }
     @keyframes palpitar {
       0%, 100% { transform: scale(1);}
@@ -102,7 +103,6 @@
       70% { transform: scale(0.96);}
       85% { transform: scale(1.03);}
     }
-    /* Espacio para dejar libre los capibaras */
     .espacio-capibaras {
       width: 100%;
       height: 70vw;
@@ -111,7 +111,6 @@
       pointer-events: none;
       user-select: none;
     }
-    /* Frase bajo capibaras, MARQUESINA animada */
     .subfrase-grande {
       font-size: 1.18em;
       font-weight: 700;
@@ -119,7 +118,7 @@
       white-space: nowrap;
       overflow: hidden;
       position: relative;
-      margin: 10px 0 32px 0;
+      margin: 8px 0 10px 0; /* Mucho menos espacio abajo */
       height: 2.2em;
       z-index: 3;
     }
@@ -136,7 +135,6 @@
       0%   { transform: translateX(0);}
       100% { transform: translateX(-110vw);}
     }
-    /* Zona final */
     .zona-final {
       width: 100%;
       max-width: 430px;
@@ -152,7 +150,7 @@
       font-weight: 600;
       letter-spacing: 0.1px;
       margin-bottom: 18px;
-      margin-top: 130px;
+      margin-top: 12px; /* Antes 130px, ahora muy poco margen arriba */
       text-align: center;
       text-shadow: 1px 1px 2px #fffdf6c5;
       background: none !important;
@@ -208,7 +206,7 @@
       .fotos-cumple img { width: 43vw; height: 38vw; }
       .texto-cumple { font-size: 1.06em; }
       .espacio-capibaras { height: 76vw; min-height: 170px; }
-      .evento-info { margin-top: 150px; }
+      .evento-info { margin-top: 15px; }
       .subfrase-grande { font-size: 1em;}
     }
   </style>
@@ -269,23 +267,23 @@
     updateCountdown();
   </script>
 
-  <!-- Corazoncitos JS -->
+  <!-- Corazoncitos JS (más sencillo/discreto) -->
   <script>
     const corazonesDiv = document.getElementById('corazones');
-    const emojis = ['💖','💗','💝','💘','💕','💞','❤️‍🔥'];
+    const emojis = ['💖','💗','💕'];
     function creaCorazon() {
       const corazon = document.createElement('span');
       corazon.className = 'corazon';
       corazon.style.left = (Math.random()*100)+'vw';
-      corazon.style.fontSize = (1.5 + Math.random()*1.5)+'em';
-      corazon.style.animationDuration = (3.6 + Math.random()*2.2)+'s';
+      corazon.style.fontSize = (1.1 + Math.random()*0.6)+'em';
+      corazon.style.animationDuration = (5.5 + Math.random()*2.5)+'s';
       corazon.textContent = emojis[Math.floor(Math.random()*emojis.length)];
-      corazon.style.opacity = 0.63 + Math.random()*0.25;
+      corazon.style.opacity = 0.32 + Math.random()*0.23;
       corazonesDiv.appendChild(corazon);
-      setTimeout(()=>corazon.remove(), 7000);
+      setTimeout(()=>corazon.remove(), 9000);
     }
-    setInterval(creaCorazon, 500);
-    for(let i=0; i<10; i++) setTimeout(creaCorazon, i*250);
+    setInterval(creaCorazon, 1100); // menos frecuencia
+    for(let i=0; i<5; i++) setTimeout(creaCorazon, i*400);
   </script>
 </body>
 </html>
