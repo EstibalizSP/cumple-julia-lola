@@ -288,12 +288,20 @@
       .fotos-cumple {
         margin-top: 35vw; /* Fotos un poco más arriba en móvil */
         gap: 4vw;
+        width: 100%;         /* Aseguro que ocupe todo el ancho */
+        max-width: none;     /* Quito máximo ancho para no limitar */
+        padding: 0;
+        box-sizing: border-box;
+        justify-content: center;  /* Centrado total */
+
       }
       .fotos-cumple img {
         width: 48vw;
         height: 42vw;
         max-width: 160px;
         max-height: 170px;
+        margin: 0 auto; /* Para que no se desplacen */
+        display: block; /* Evita que se muevan por inline */
       }
       .texto-cumple {
         font-size: 1.09em;
