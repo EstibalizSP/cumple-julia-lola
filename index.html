@@ -26,17 +26,18 @@
     .content-wrapper {
       max-width: 460px;
       margin: 0 auto;
+      padding: 15px 20px 30px;
+      /* Fondo totalmente transparente, sin sombra ni bordes */
       background: transparent;
-      border-radius: 20px;
-      box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
-      padding: 30px 20px 30px;
+      box-shadow: none;
+      border-radius: 0;
     }
     .photo-container {
       display: flex;
       justify-content: center;
       gap: 15px;
       margin-bottom: 15px;
-      margin-top: 60px; /* baja las fotos */
+      margin-top: 100px; /* más margen para bajar fotos */
       flex-wrap: nowrap;
     }
     .photo-container img {
@@ -117,4 +118,3 @@
 
 </body>
 </html>
-
