@@ -83,55 +83,59 @@
       letter-spacing: 1px;
       margin-bottom: 0px;
     }
-    /* EFECTO NEÓN SUAVE Y BRILLANTE */
-.texto-cumple .cumple-edad {
-  font-size: 3em; /* Más grande */
-  display: block;
-  color:  #ff26b2; /* Rosa FUERTE */
-  margin-bottom: 0px;
-  font-weight: bold;
-  background: none !important;
-  padding: 0.18em 0.1em;
-  border-radius: 0;
-  letter-spacing: 1px;
-  text-shadow:
-    0 0 24px #ffb3f7,
-    0 0 48px #ff79c8,
-    0 0 72px #ff41b6,
-    0 0 88px #fff0,
-    0 2px 22px #ffe7fa,
-    0 0 120px #ff41b6cc,
-    1px 1px 0 #fff;
-  animation: palpitar 2.3s infinite cubic-bezier(.4,1.5,.7,1), neonCumple 1.6s infinite alternate;
-}
-
+    /* MEGA ROSA Y BRILLANTE */
+    .texto-cumple .cumple-edad {
+      font-size: 3.1em; /* ¡Súper grande! */
+      display: block;
+      color: #ff1da7; /* Mega rosa fuerte */
+      margin-bottom: 0px;
+      font-weight: bold;
+      background: none !important;
+      padding: 0.18em 0.1em;
+      border-radius: 0;
+      letter-spacing: 2px;
+      text-shadow:
+        0 0 32px #ffb3f7,
+        0 0 40px #ffb4e2,
+        0 0 80px #ff79c8,
+        0 0 120px #ff41b6,
+        0 2px 42px #ffe7fa,
+        0 0 180px #ff41b6cc,
+        0 0 8px #fff,
+        1px 1px 0 #fff;
+      animation: palpitar 1.5s infinite cubic-bezier(.4,1.5,.7,1), neonCumple 1.3s infinite alternate;
+      /* Para móviles que se pase un poco de tamaño */
+      word-break: break-word;
+    }
     @keyframes palpitar {
       0%, 100% { transform: scale(1);}
-      20% { transform: scale(1.10);}
+      20% { transform: scale(1.13);}
       40% { transform: scale(0.98);}
-      65% { transform: scale(1.06);}
+      65% { transform: scale(1.08);}
       80% { transform: scale(1.02);}
     }
     @keyframes neonCumple {
       0%,100% {
         text-shadow:
-          0 0 10px #fff,
-          0 0 18px #d69bff,
-          0 0 32px #ff64e0,
-          0 2px 12px #ffe9fa,
-          0 0 54px #b686fd,
+          0 0 32px #ffb3f7,
+          0 0 40px #ffb4e2,
+          0 0 80px #ff79c8,
+          0 0 120px #ff41b6,
+          0 2px 42px #ffe7fa,
+          0 0 180px #ff41b6cc,
+          0 0 8px #fff,
           1px 1px 0 #fff;
-        color: #fff;
+        color: #ff1da7;
       }
       50% {
         text-shadow:
-          0 0 24px #fff,
-          0 0 38px #ea8fff,
-          0 0 54px #ff64e0,
-          0 2px 22px #ffe9fa,
-          0 0 86px #a475fc,
+          0 0 56px #ffb3f7,
+          0 0 86px #ea8fff,
+          0 0 120px #ff79c8,
+          0 2px 62px #ffe7fa,
+          0 0 230px #ff41b6cc,
           1px 1px 0 #fff;
-        color: #f8d6ff;
+        color: #ff7ede;
       }
     }
     .espacio-capibaras {
@@ -210,7 +214,7 @@
         padding: 0 2vw;
       }
       .texto-cumple .cumple-edad {
-        font-size: 1em;
+        font-size: 2em;
       }
     }
     .zona-final {
@@ -381,7 +385,8 @@
 
   <!-- Confetti, Fuegos Artificiales y Cumpleaños Feliz JS -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-  <audio id="cumpleAudio" preload="auto" src="https://raw.githubusercontent.com/EstibalizSP/cumple-julia-lola/main/cumple.mp3"></audio>
+  <!-- USA TU NUEVA CANCIÓN -->
+  <audio id="cumpleAudio" preload="auto" src="audio1.mp3"></audio>
   <script>
     const botonFiesta = document.getElementById('botonFiesta');
     const cumpleAudio = document.getElementById('cumpleAudio');
@@ -421,3 +426,4 @@
   </script>
 </body>
 </html>
+
