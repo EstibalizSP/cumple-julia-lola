@@ -17,24 +17,18 @@
       overflow-x: hidden;
       min-height: 100vh;
     }
-    /* --- Bloque fotos + texto cumple --- */
-    .bloque-cumple {
-      margin-top: 27vw; /* ajusta según fondo3 */
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 14px;
-      z-index: 2;
-      position: relative;
-    }
-    .fotos {
+    .fotos-cumple {
       display: flex;
       justify-content: center;
       gap: 13px;
+      margin-top: 36vw;  /* MÁS ABAJO aún */
+      margin-bottom: 16px;
       width: 100%;
       max-width: 340px;
+      z-index: 2;
+      position: relative;
     }
-    .fotos img {
+    .fotos-cumple img {
       width: 41vw;
       max-width: 135px;
       height: 37vw;
@@ -46,73 +40,73 @@
       background: #fff7;
     }
     .texto-cumple {
-      font-size: 1.21em;
+      font-size: 1.25em;
       font-weight: 600;
-      margin-top: 2vw;
-      background: rgba(255,255,255,0.68);
-      border-radius: 13px;
-      padding: 10px 15px 7px 15px;
-      box-shadow: 0 2px 8px #ffd1e649;
       letter-spacing: 0.2px;
       text-align: center;
-      max-width: 340px;
-      margin-bottom: 0;
+      max-width: 380px;
+      margin: 0 auto 0 auto;
+      margin-bottom: 6vw;
+      background: none !important;
+      text-shadow: 1px 1px 2px #fff8e7;
     }
     .texto-cumple .nombres {
-      font-size: 1.6em;
+      font-size: 1.7em;
       font-weight: 700;
-      margin-bottom: 5px;
       display: block;
       color: #543520;
       letter-spacing: 1px;
+      margin-bottom: 2px;
     }
     .texto-cumple .cumple-edad {
       font-size: 1.15em;
       display: block;
       color: #7d4b2a;
-      margin-bottom: 5px;
+      margin-bottom: 4px;
     }
     .texto-cumple .subfrase {
-      font-size: 0.99em;
+      font-size: 1em;
       font-weight: 400;
       color: #65492e;
     }
-
-    /* --- Margen para dejar libre la zona del dibujo capibaras --- */
+    /* Espacio para dejar libre los capibaras */
     .espacio-capibaras {
       width: 100%;
-      height: 27vw; /* ajusta según el alto real del dibujo en tu fondo */
-      min-height: 112px;
-      max-height: 190px;
+      height: 28vw;   /* Ajusta según el alto de tus capibaras en el fondo */
+      min-height: 100px;
+      max-height: 200px;
       pointer-events: none;
       user-select: none;
+      /* Sin fondo */
     }
-    /* --- Zona inferior: info, botones, cuenta atrás --- */
+    /* Bloque de info final SIN cuadro */
     .zona-final {
       width: 100%;
-      max-width: 410px;
+      max-width: 430px;
       margin: 0 auto;
       display: flex;
       flex-direction: column;
       align-items: center;
       margin-top: 0;
-      /* Sin fondo, solo flotando */
+      background: none !important;
     }
     .evento-info {
-      font-size: 1.13rem;
+      font-size: 1.15rem;
       font-weight: 600;
       letter-spacing: 0.1px;
       margin-bottom: 16px;
       margin-top: 0;
       text-align: center;
       text-shadow: 1px 1px 2px #fffdf6c5;
+      background: none !important;
     }
     .countdown {
-      font-size: 1.15em;
+      font-size: 1.12em;
       font-weight: bold;
       color: #ff6995;
       margin-bottom: 18px;
       text-shadow: 1px 1px 2px #fffdf6e0;
+      background: none !important;
     }
     .btn {
       background-color: #ff6995;
@@ -143,46 +137,40 @@
       box-shadow: 0 0 15px #ff699566;
     }
     @media (max-width: 500px) {
-      .bloque-cumple { margin-top: 28vw; }
-      .fotos img { width: 42vw; height: 37vw; }
-      .texto-cumple { font-size: 1.11em; }
-      .espacio-capibaras { height: 27vw; min-height: 100px; }
+      .fotos-cumple { margin-top: 38vw; }
+      .fotos-cumple img { width: 43vw; height: 38vw; }
+      .texto-cumple { font-size: 1.09em; }
+      .espacio-capibaras { height: 30vw; min-height: 100px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Bloque arriba: fotos + texto de cumple -->
-  <div class="bloque-cumple">
-    <div class="fotos">
-      <img src="julia.jpg" alt="Foto de Julia" />
-      <img src="lola.jpg" alt="Foto de Lola" />
-    </div>
-    <div class="texto-cumple">
-      <span class="nombres">Julia & Lola 🎈</span>
-      <span class="cumple-edad">✨ ¡Cumplimos 10 años! ✨</span>
-      <span class="subfrase">¡Celebra con nosotras una tarde llena de alegría y capibaras!</span>
-    </div>
+  <!-- Fotos de Julia y Lola -->
+  <div class="fotos-cumple">
+    <img src="julia.jpg" alt="Foto de Julia" />
+    <img src="lola.jpg" alt="Foto de Lola" />
   </div>
 
-  <!-- Espacio invisible para dejar visible la zona de los capibaras del fondo -->
+  <!-- Texto de cumpleaños -->
+  <div class="texto-cumple">
+    <span class="nombres">Julia & Lola 🎈</span>
+    <span class="cumple-edad">✨ ¡Cumplimos 10 años! ✨</span>
+    <span class="subfrase">¡Celebra con nosotras una tarde llena de alegría y capibaras!</span>
+  </div>
+
+  <!-- Espacio vacío para los capibaras del fondo (ajusta altura si hace falta) -->
   <div class="espacio-capibaras"></div>
 
-  <!-- Zona inferior: dirección, botones, cuenta regresiva -->
+  <!-- Bloque final: dirección, botones, cuenta atrás (todo SIN fondo/caja) -->
   <div class="zona-final">
-    <div class="evento-info">
-      <span>📅 16 Junio - 17:00 h<br>
-      📍 Calle Hispalis, 2 (Bollullos de la Mitación)</span>
+    <div class="evento-info" style="margin-top: 35px;">
+      📅 16 Junio - 17:00 h<br>
+      📍 Calle Hispalis, 2 (Bollullos de la Mitación)
     </div>
-
     <div class="countdown" id="countdown"></div>
-
-    <a class="btn" href="https://maps.app.goo.gl/">
-      📍 Cómo llegar
-    </a>
-    <a class="btn whatsapp" href="https://wa.me/34627685889?text=🎉%20Hola!%20Confirmamos%20nuestra%20asistencia%20al%20cumple%20de%20Julia%20y%20Lola.%20¡Nos%20vemos%20allí!%20😊" target="_blank">
-      💬 Confirmar asistencia
-    </a>
+    <a class="btn" href="https://maps.app.goo.gl/">📍 Cómo llegar</a>
+    <a class="btn whatsapp" href="https://wa.me/34627685889?text=🎉%20Hola!%20Confirmamos%20nuestra%20asistencia%20al%20cumple%20de%20Julia%20y%20Lola.%20¡Nos%20vemos%20allí!%20😊" target="_blank">💬 Confirmar asistencia</a>
   </div>
 
   <!-- Cuenta atrás JS -->
