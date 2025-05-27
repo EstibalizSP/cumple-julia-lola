@@ -21,8 +21,8 @@
       display: flex;
       justify-content: center;
       gap: 13px;
-      margin-top: 36vw;  /* MÁS ABAJO aún */
-      margin-bottom: 16px;
+      margin-top: 36vw;
+      margin-bottom: 8px; /* MÁS pegadas las letras */
       width: 100%;
       max-width: 340px;
       z-index: 2;
@@ -40,46 +40,47 @@
       background: #fff7;
     }
     .texto-cumple {
-      font-size: 1.25em;
+      font-size: 1.22em;
       font-weight: 600;
       letter-spacing: 0.2px;
       text-align: center;
       max-width: 380px;
       margin: 0 auto 0 auto;
-      margin-bottom: 6vw;
+      margin-bottom: 2vw; /* más pegadas las letras a las fotos */
       background: none !important;
       text-shadow: 1px 1px 2px #fff8e7;
+      line-height: 1.15;
     }
     .texto-cumple .nombres {
-      font-size: 1.7em;
+      font-size: 1.65em;
       font-weight: 700;
       display: block;
       color: #543520;
       letter-spacing: 1px;
-      margin-bottom: 2px;
+      margin-bottom: 0px;
     }
     .texto-cumple .cumple-edad {
-      font-size: 1.15em;
+      font-size: 1.13em;
       display: block;
       color: #7d4b2a;
-      margin-bottom: 4px;
+      margin-bottom: 1px;
     }
     .texto-cumple .subfrase {
       font-size: 1em;
       font-weight: 400;
       color: #65492e;
+      margin-bottom: 0;
     }
     /* Espacio para dejar libre los capibaras */
     .espacio-capibaras {
       width: 100%;
-      height: 28vw;   /* Ajusta según el alto de tus capibaras en el fondo */
-      min-height: 100px;
-      max-height: 200px;
+      height: 31vw;   /* Ajusta según el alto de tus capibaras en el fondo */
+      min-height: 115px;
+      max-height: 210px;
       pointer-events: none;
       user-select: none;
       /* Sin fondo */
     }
-    /* Bloque de info final SIN cuadro */
     .zona-final {
       width: 100%;
       max-width: 430px;
@@ -91,17 +92,17 @@
       background: none !important;
     }
     .evento-info {
-      font-size: 1.15rem;
+      font-size: 1.14rem;
       font-weight: 600;
       letter-spacing: 0.1px;
-      margin-bottom: 16px;
-      margin-top: 0;
+      margin-bottom: 18px;
+      margin-top: 48px; /* MUCHO más margen arriba, ¡ajusta si hace falta! */
       text-align: center;
       text-shadow: 1px 1px 2px #fffdf6c5;
       background: none !important;
     }
     .countdown {
-      font-size: 1.12em;
+      font-size: 1.11em;
       font-weight: bold;
       color: #ff6995;
       margin-bottom: 18px;
@@ -137,10 +138,11 @@
       box-shadow: 0 0 15px #ff699566;
     }
     @media (max-width: 500px) {
-      .fotos-cumple { margin-top: 38vw; }
+      .fotos-cumple { margin-top: 39vw; }
       .fotos-cumple img { width: 43vw; height: 38vw; }
-      .texto-cumple { font-size: 1.09em; }
-      .espacio-capibaras { height: 30vw; min-height: 100px; }
+      .texto-cumple { font-size: 1.06em; }
+      .espacio-capibaras { height: 32vw; min-height: 105px; }
+      .evento-info { margin-top: 54px; }
     }
   </style>
 </head>
@@ -164,9 +166,9 @@
 
   <!-- Bloque final: dirección, botones, cuenta atrás (todo SIN fondo/caja) -->
   <div class="zona-final">
-    <div class="evento-info" style="margin-top: 35px;">
-      📅 16 Junio - 17:00 h<br>
-      📍 Calle Hispalis, 2 (Bollullos de la Mitación)
+    <div class="evento-info">
+      16 Junio - 17:00 h<br>
+      Calle Hispalis, 2 (Bollullos de la Mitación)
     </div>
     <div class="countdown" id="countdown"></div>
     <a class="btn" href="https://maps.app.goo.gl/">📍 Cómo llegar</a>
@@ -188,7 +190,7 @@
         document.getElementById('countdown').textContent =
           `Faltan ${days} días, ${hours} h, ${mins} min, ${secs} s`;
       } else {
-        document.getElementById('countdown').textContent = "¡Es hoy!";
+        document.getElementById('countdown').textContent = "";
       }
     }
     setInterval(updateCountdown, 1000);
