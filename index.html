@@ -34,7 +34,6 @@
       pointer-events: none;
       user-select: none;
       will-change: transform, opacity;
-      /* Sin sombra ni brillo */
       filter: none;
       text-shadow: none;
     }
@@ -111,29 +110,41 @@
       pointer-events: none;
       user-select: none;
     }
+    /* MARQUESINA GRANDE, CAMBIO DE COLOR Y BRILLO */
     .subfrase-grande {
-      font-size: 1.18em;
-      font-weight: 700;
+      font-size: 2em;
+      font-weight: 900;
       max-width: 98vw;
       white-space: nowrap;
       overflow: hidden;
       position: relative;
-      margin: 8px 0 10px 0; /* Mucho menos espacio abajo */
-      height: 2.2em;
+      margin: 8px 0 10px 0;
+      height: 2.5em;
       z-index: 3;
+      text-align: center;
     }
     .subfrase-marquesina {
       display: inline-block;
-      color: #ff3d77;
-      text-shadow: 0 0 8px #fff, 0 1px 8px #fffd;
-      padding-left: 100vw;
-      animation: marquee 14s linear infinite;
+      /* Degradado animado naranja-rosa */
+      background: linear-gradient(270deg, #ffb968, #ff3d77, #ffb968 90%);
+      background-size: 200% 200%;
+      color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+      filter: drop-shadow(0 2px 8px #fffbe7bb);
+      animation: marquee 15s linear infinite, gradienteColor 2.8s ease-in-out infinite alternate;
       font-family: 'Fredoka', sans-serif;
-      letter-spacing: 0.5px;
+      letter-spacing: 1.3px;
+      font-weight: 900;
+      padding-left: 100vw;
     }
     @keyframes marquee {
       0%   { transform: translateX(0);}
       100% { transform: translateX(-110vw);}
+    }
+    @keyframes gradienteColor {
+      0% { background-position: 0% 50%;}
+      100% { background-position: 100% 50%;}
     }
     .zona-final {
       width: 100%;
@@ -150,7 +161,7 @@
       font-weight: 600;
       letter-spacing: 0.1px;
       margin-bottom: 18px;
-      margin-top: 12px; /* Antes 130px, ahora muy poco margen arriba */
+      margin-top: 12px;
       text-align: center;
       text-shadow: 1px 1px 2px #fffdf6c5;
       background: none !important;
@@ -164,9 +175,9 @@
       text-shadow: 0 0 8px #fff8, 0 1px 3px #ffd;
       background: none !important;
     }
-    /* BOTÓN GLOW */
+    /* BOTONES PALPITANDO */
     .btn {
-      background-color: #ff6995;
+      background: linear-gradient(90deg, #ffb968 0%, #ff66ad 100%);
       color: white;
       text-decoration: none;
       padding: 16px 28px;
@@ -181,12 +192,18 @@
       max-width: 320px;
       transition: background .2s;
       text-align: center;
-      box-shadow: 0 0 25px #ff699577, 0 0 2px #fff, 0 0 30px #ff6995aa;
-      animation: glow 1.2s infinite alternate;
+      box-shadow: 0 0 25px #ffb96877, 0 0 2px #fff, 0 0 30px #ffb96899;
+      animation: palpitarBoton 1.45s infinite, glow 1.2s infinite alternate;
+    }
+    @keyframes palpitarBoton {
+      0%, 100% { transform: scale(1);}
+      25% { transform: scale(1.07);}
+      55% { transform: scale(1.04);}
+      70% { transform: scale(0.96);}
     }
     @keyframes glow {
-      0%   { box-shadow: 0 0 25px #ff699577, 0 0 2px #fff, 0 0 30px #ff6995aa; }
-      100% { box-shadow: 0 0 35px #ff6995cc, 0 0 14px #fff5, 0 0 50px #fff2;}
+      0%   { box-shadow: 0 0 25px #ffb96877, 0 0 2px #fff, 0 0 30px #ffb96899;}
+      100% { box-shadow: 0 0 38px #ffb968cc, 0 0 16px #fff5, 0 0 55px #fff2;}
     }
     /* BOTÓN CONFIRMAR: degradado rosa-naranja */
     .btn.whatsapp {
@@ -195,7 +212,7 @@
       border: 2px solid #ff6995;
       margin-top: 14px;
       box-shadow: 0 0 28px #ffb96855, 0 0 12px #ff699577;
-      animation: glow2 1.3s infinite alternate;
+      animation: palpitarBoton 1.45s infinite, glow2 1.3s infinite alternate;
     }
     @keyframes glow2 {
       0%   { box-shadow: 0 0 30px #ffb96855, 0 0 15px #ffb96866, 0 0 12px #ff699577;}
@@ -207,7 +224,7 @@
       .texto-cumple { font-size: 1.06em; }
       .espacio-capibaras { height: 76vw; min-height: 170px; }
       .evento-info { margin-top: 15px; }
-      .subfrase-grande { font-size: 1em;}
+      .subfrase-grande { font-size: 1.18em;}
     }
   </style>
 </head>
@@ -230,9 +247,11 @@
   <!-- Espacio invisible para los capibaras -->
   <div class="espacio-capibaras"></div>
 
-  <!-- Frase central bajo capibaras, EN MOVIMIENTO -->
+  <!-- Frase central bajo capibaras, GRANDE y DEGRADADO ANIMADO -->
   <div class="subfrase-grande">
-    <span class="subfrase-marquesina">¡Celebra con nosotras una tarde llena de alegría y capibaras! &nbsp; 🎉&nbsp;</span>
+    <span class="subfrase-marquesina">
+      ¡Celebra con nosotras una tarde llena de alegría y capibaras! &nbsp; 🎉&nbsp;
+    </span>
   </div>
 
   <!-- Bloque final: dirección, botones, cuenta atrás -->
