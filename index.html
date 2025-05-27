@@ -6,7 +6,6 @@
   <title>🎉 Cumple Julia & Lola 🎉</title>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&display=swap" rel="stylesheet" />
   <style>
-    /* -- Establezco el fondo y fuentes generales -- */
     body {
       font-family: 'Fredoka', sans-serif;
       background: url('fondo3.png') no-repeat center top;
@@ -19,7 +18,6 @@
       min-height: 100vh;
       position: relative;
     }
-    /* -- Corazoncitos cayendo -- */
     .corazones-cayendo {
       pointer-events: none;
       position: fixed;
@@ -41,13 +39,11 @@
       60% { opacity: 0.54;}
       100% { transform: translateY(104vh) scale(0.95) rotate(3deg); opacity: 0;}
     }
-
-    /* -- Bloque superior: fotos de Julia y Lola -- */
     .fotos-cumple {
       display: flex;
       justify-content: center;
       gap: 10px;
-      margin-top: 25vw;      /* Aumentado para bajar las fotos mucho más */
+      margin-top: 40vw; /* Bajar mucho más las fotos */
       margin-bottom: 2vw;
       width: 100%;
       max-width: 330px;
@@ -65,7 +61,6 @@
       box-shadow: 0 0 8px rgba(255,105,149,0.4);
       background: #fff7;
     }
-    /* -- Nombres y mensaje de cumple -- */
     .texto-cumple {
       font-size: 1.18em;
       font-weight: 600;
@@ -77,11 +72,12 @@
       background: none !important;
       text-shadow: 1px 1px 2px #fff9, 0 2px 8px #fff8;
       line-height: 1.15;
+      white-space: nowrap; /* Para que todo esté en una línea */
     }
     .nombres {
       font-size: 1.5em;
       font-weight: 700;
-      display: block;
+      display: inline; /* inline para que quede todo en línea */
       letter-spacing: 1px;
       margin-bottom: 0;
     }
@@ -98,10 +94,10 @@
     }
     .texto-cumple .cumple-edad {
       font-size: 2em;
-      display: block;
+      display: inline; /* inline para estar en la misma línea */
       color: #ff1da7;
       font-weight: bold;
-      margin-bottom: 0;
+      margin-left: 0.4em; /* Pequeño espacio entre nombres y edad */
       padding: 0.08em 0.1em 0.04em 0.1em;
       letter-spacing: 1.1px;
       text-shadow:
@@ -146,22 +142,18 @@
       65% { transform: scale(1.01);}
       80% { transform: scale(1.01);}
     }
-
-    /* -- Dejo un espacio vacío GRANDE para que se vean bien las capibaras de fondo -- */
     .espacio-fondo {
       width: 100%;
       height: 35vw;
       min-height: 110px;
       max-height: 200px;
     }
-
-    /* -- El resto del contenido lo bajo bien, debajo del espacio vacío -- */
     .subfrase-grande-rosa {
       font-size: 1.08em;
       font-weight: 800;
       width: 97vw;
       max-width: 320px;
-      margin: 3.5em auto 1.1em auto; /* Aumentado margen superior para bajar más */
+      margin: 6em auto 1.1em auto; /* Bajado mucho más */
       color: #ff3d8b;
       text-align: center;
       letter-spacing: 1px;
@@ -249,22 +241,19 @@
       0%   { box-shadow: 0 0 19px #ffb96833, 0 0 2px #fff, 0 0 22px #ffb96844;}
       100% { box-shadow: 0 0 32px #ffb96899, 0 0 12px #fff4, 0 0 34px #ffd3;}
     }
-    /* -- Ajusto todo para móvil, que todo sea más grande y claro -- */
     @media (max-width: 600px) {
-      .fotos-cumple { margin-top: 20vw; gap: 4vw;} /* También aumentado para móvil */
+      .fotos-cumple { margin-top: 30vw; gap: 4vw; }
       .fotos-cumple img { width: 44vw; height: 37vw; max-width: 140px; max-height: 150px;}
-      .texto-cumple { font-size: 1.09em; }
-      .subfrase-grande-rosa { font-size: 1em; margin: 2.5em auto 1.4em auto;} /* Más margen arriba para móvil */
+      .texto-cumple { font-size: 1.09em; white-space: nowrap; }
+      .subfrase-grande-rosa { font-size: 1em; margin: 4em auto 1.4em auto;}
       .botones-cumple { max-width: 98vw; }
       .espacio-fondo { height: 35vw; min-height: 90px;}
     }
   </style>
 </head>
 <body>
-  <!-- Lluvia de corazoncitos: pongo corazones animados en la pantalla -->
   <div class="corazones-cayendo" id="corazones"></div>
 
-  <!-- Arriba pongo las fotos y los nombres de Julia y Lola, y el mensaje del cumpleaños -->
   <div class="fotos-cumple">
     <img src="julia1.jpg" alt="Foto de Julia" />
     <img src="lola.jpg" alt="Foto de Lola" />
@@ -278,15 +267,8 @@
     <span class="cumple-edad">¡Cumplimos 10 años!</span>
   </div>
 
-  <!-- Aquí dejo un gran espacio vacío (como un “hueco”) para que se vean bien los dibujos de las capibaras del fondo.
-       Así consigo que la zona de arriba quede bien separada de la de abajo. -->
   <div class="espacio-fondo"></div>
 
-  <!-- Ahora, debajo del espacio vacío, pongo todo el resto:
-       - Frase de invitación,
-       - Fecha, dirección y cuenta atrás,
-       - Botones.
-       Así nada tapa el dibujo y todo queda limpio. -->
   <div class="zona-final">
     <div class="subfrase-grande-rosa">
       ¡Celebra con nosotras una tarde llena de alegría y capibaras! 🎉
@@ -303,9 +285,8 @@
     </div>
   </div>
 
-  <!-- Script para la cuenta atrás del evento -->
   <script>
-    const eventDate = new Date(2025, 5, 16, 17, 0, 0); // 16 junio 2025, 17:00
+    const eventDate = new Date(2025, 5, 16, 17, 0, 0);
     function updateCountdown() {
       const now = new Date();
       const diff = eventDate - now;
@@ -324,7 +305,6 @@
     updateCountdown();
   </script>
 
-  <!-- Script para los corazones animados -->
   <script>
     const corazonesDiv = document.getElementById('corazones');
     const emojis = ['💖','💗','💕'];
@@ -343,7 +323,6 @@
     for(let i=0; i<1; i++) setTimeout(creaCorazon, i*1100);
   </script>
 
-  <!-- Script para el confetti y la música al pulsar el botón de fiesta -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
   <audio id="cumpleAudio" preload="auto" src="audio1.mp3"></audio>
   <script>
@@ -378,4 +357,5 @@
   </script>
 </body>
 </html>
+
 
