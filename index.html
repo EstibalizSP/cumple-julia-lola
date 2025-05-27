@@ -18,7 +18,6 @@
       min-height: 100vh;
       position: relative;
     }
-    /* --- Corazones flotantes (DISCRETOS) --- */
     .corazones-cayendo {
       pointer-events: none;
       position: fixed;
@@ -42,7 +41,6 @@
       40% { opacity: 0.73;}
       100% { transform: translateY(104vh) scale(0.95) rotate(6deg); opacity: 0;}
     }
-    /* --- Fotos de Julia y Lola --- */
     .fotos-cumple {
       display: flex;
       justify-content: center;
@@ -110,7 +108,6 @@
       pointer-events: none;
       user-select: none;
     }
-    /* --- Frase en rosa fuerte, MÁS NEÓN/BRILLO, sacudida suave --- */
     .subfrase-grande-rosa {
       font-size: 2em;
       font-weight: 900;
@@ -208,7 +205,6 @@
       text-shadow: 0 0 8px #fff8, 0 1px 3px #ffd;
       background: none !important;
     }
-    /* BOTONES PALPITANDO Y DEGRADADO */
     .btn {
       background: linear-gradient(90deg, #ffb968 0%, #ff66ad 100%);
       color: white;
@@ -239,7 +235,6 @@
       0%   { box-shadow: 0 0 25px #ffb96877, 0 0 2px #fff, 0 0 30px #ffb96899;}
       100% { box-shadow: 0 0 38px #ffb968cc, 0 0 16px #fff5, 0 0 55px #fff2;}
     }
-    /* BOTÓN CONFIRMAR: degradado rosa-naranja */
     .btn.whatsapp {
       background: linear-gradient(90deg, #ff66ad 0%, #ffb968 100%);
       color: white;
@@ -248,7 +243,6 @@
       box-shadow: 0 0 28px #ffb96855, 0 0 12px #ff699577;
       animation: palpitarBoton 1.45s infinite, glow2 1.3s infinite alternate;
     }
-    /* BOTÓN FIESTA: degradado amarillo-rosa y diferente sombra */
     .btn.fiesta {
       background: linear-gradient(90deg, #ffe168 0%, #fd4eff 100%);
       border: 2px solid #fd9cfa;
@@ -303,7 +297,7 @@
       Calle Hispalis, 2 (Bollullos de la Mitación)
     </div>
     <div class="countdown" id="countdown"></div>
-    <button class="btn fiesta" id="botonFiesta">🎊 Fiesta sorpresa</button>
+    <button class="btn fiesta" id="botonFiesta">🎵 Pulsa aquí para que comience la fiesta 🎉</button>
     <a class="btn" href="https://maps.app.goo.gl/">📍 Cómo llegar</a>
     <a class="btn whatsapp" href="https://wa.me/34627685889?text=🎉%20Hola!%20Confirmamos%20nuestra%20asistencia%20al%20cumple%20de%20Julia%20y%20Lola.%20¡Nos%20vemos%20allí!%20😊" target="_blank">💬 Confirmar asistencia</a>
   </div>
@@ -329,7 +323,7 @@
     updateCountdown();
   </script>
 
-  <!-- Corazoncitos JS (más sencillo/discreto) -->
+  <!-- Corazoncitos JS -->
   <script>
     const corazonesDiv = document.getElementById('corazones');
     const emojis = ['💖','💗','💕'];
@@ -344,7 +338,7 @@
       corazonesDiv.appendChild(corazon);
       setTimeout(()=>corazon.remove(), 9000);
     }
-    setInterval(creaCorazon, 1100); // menos frecuencia
+    setInterval(creaCorazon, 1100);
     for(let i=0; i<5; i++) setTimeout(creaCorazon, i*400);
   </script>
 
