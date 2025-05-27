@@ -64,7 +64,6 @@
       box-shadow: 0 0 12px rgba(255,105,149,0.5);
       background: #fff7;
     }
-    /* --- Texto cumple colores --- */
     .texto-cumple {
       font-size: 1.22em;
       font-weight: 600;
@@ -81,21 +80,15 @@
       font-size: 1.65em;
       font-weight: 700;
       display: block;
-      color: #ff469e; /* rosa alegre */
+      color: #ff469e;
       letter-spacing: 1px;
       margin-bottom: 0px;
     }
     .texto-cumple .cumple-edad {
       font-size: 1.13em;
       display: block;
-      color: #ab67fd; /* lila */
-      margin-bottom: 1px;
-    }
-    .texto-cumple .subfrase {
-      font-size: 1em;
-      font-weight: 400;
-      color: #ffa85a; /* naranja cálido */
-      margin-bottom: 0;
+      color: #ab67fd;
+      margin-bottom: 0px;
     }
     /* Espacio para dejar libre los capibaras */
     .espacio-capibaras {
@@ -105,6 +98,16 @@
       max-height: 360px;
       pointer-events: none;
       user-select: none;
+    }
+    /* Frase bajo capibaras */
+    .subfrase-grande {
+      font-size: 1.13em;
+      color: #ffa85a;
+      font-weight: 600;
+      text-align: center;
+      max-width: 420px;
+      margin: 18px auto 28px auto;
+      text-shadow: 1px 1px 8px #fff8, 0 1px 3px #ffd;
     }
     .zona-final {
       width: 100%;
@@ -125,7 +128,7 @@
       text-align: center;
       text-shadow: 1px 1px 2px #fffdf6c5;
       background: none !important;
-      color: #a04a3c; /* marrón alegre */
+      color: #a04a3c;
     }
     .countdown {
       font-size: 1.11em;
@@ -182,15 +185,19 @@
     <img src="lola.jpg" alt="Foto de Lola" />
   </div>
 
-  <!-- Texto de cumpleaños -->
+  <!-- Texto de cumpleaños: solo nombre y edad -->
   <div class="texto-cumple">
     <span class="nombres">Julia & Lola 🎈</span>
     <span class="cumple-edad">✨ ¡Cumplimos 10 años! ✨</span>
-    <span class="subfrase">¡Celebra con nosotras una tarde llena de alegría y capibaras!</span>
   </div>
 
-  <!-- Espacio vacío para los capibaras del fondo -->
+  <!-- Espacio invisible para los capibaras -->
   <div class="espacio-capibaras"></div>
+
+  <!-- Frase central bajo capibaras -->
+  <div class="subfrase-grande">
+    ¡Celebra con nosotras una tarde llena de alegría y capibaras!
+  </div>
 
   <!-- Bloque final: dirección, botones, cuenta atrás -->
   <div class="zona-final">
@@ -205,7 +212,6 @@
 
   <!-- Cuenta atrás JS -->
   <script>
-    // Fecha del evento (año, mes-1, día, hora, min)
     const eventDate = new Date(2025, 5, 16, 17, 0, 0); // 16 junio 2025, 17:00
     function updateCountdown() {
       const now = new Date();
@@ -241,10 +247,7 @@
       setTimeout(()=>corazon.remove(), 7000);
     }
     setInterval(creaCorazon, 500);
-    // Al cargar la página, lanza varios de golpe para que se vea bonito enseguida
     for(let i=0; i<10; i++) setTimeout(creaCorazon, i*250);
   </script>
 </body>
 </html>
-
-
