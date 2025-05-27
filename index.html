@@ -21,8 +21,8 @@
       display: flex;
       justify-content: center;
       gap: 13px;
-      margin: 22vw auto 18px auto;
-      /* El margin-top lo puedes ajustar para separarlo del fondo según te convenga */
+      margin-top: 31vw; /* las fotos más abajo o más arriba */
+      margin-bottom: 14vw; /* Espacio debajo de las fotos para que el cuadro blanco no tape los capibaras */
       max-width: 360px;
       z-index: 2;
       position: relative;
@@ -41,7 +41,7 @@
     .content-wrapper {
       max-width: 430px;
       margin: 0 auto;
-      background: rgba(255,255,255,0.85);
+      background: rgba(255,255,255,0.79); /* más transparente */
       border-radius: 20px;
       padding: 26px 7vw 30px 7vw;
       box-shadow: 0 4px 14px 0px #ffd1e666;
@@ -98,6 +98,10 @@
     @media (max-width: 500px) {
       .content-wrapper { padding-left: 5vw; padding-right: 5vw; }
       .fotos-ninas img { width: 42vw; height: 37vw; }
+      .fotos-ninas {
+        margin-top: 32vw;
+        margin-bottom: 18vw; /* más espacio si hace falta */
+      }
     }
   </style>
 </head>
@@ -109,7 +113,10 @@
     <img src="lola.jpg" alt="Foto de Lola" />
   </div>
 
-  <!-- CUADRO BLANCO DE INFORMACIÓN -->
+  <!-- ESPACIO INVISIBLE PARA RESPETAR LOS CAPIBARAS DEL FONDO -->
+  <!-- (El margin-bottom de .fotos-ninas ya hace esto) -->
+
+  <!-- CUADRO BLANCO DE INFORMACIÓN (TODO EL TEXTO VA AQUÍ, DESPUÉS DE LOS CAPIBARAS DEL FONDO) -->
   <div class="content-wrapper">
     <h1>🎈 Julia & Lola 🎈</h1>
     <h2>✨ ¡Cumplimos 10 años! ✨</h2>
