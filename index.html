@@ -8,37 +8,31 @@
   <style>
     body {
       font-family: 'Fredoka', sans-serif;
-      background: url('fondo.png') no-repeat center top;
+      background: url('fondo2.png') no-repeat center top;
       background-size: cover;
       text-align: center;
-      padding: 20px 15px 80px;
+      padding: 0 15px 80px;
       overflow-x: hidden;
       color: #5c3b26;
       text-shadow: 1px 1px 2px #fff8e7;
+      margin: 0;
     }
-    h1, h2 {
-      margin: 0.2em 0;
-    }
-    p {
-      font-size: 1.1rem;
-      margin: 0.5em 0 1em;
-    }
-    .content-wrapper {
-      max-width: 460px;
-      margin: 0 auto;
-      padding: 15px 20px 30px;
-      /* Fondo totalmente transparente, sin sombra ni bordes */
-      background: transparent;
-      box-shadow: none;
-      border-radius: 0;
+    .header {
+      background: url('fondo.png') no-repeat center top;
+      background-size: contain;
+      height: 430px; /* ajusta según altura real del fondo.png */
+      margin-bottom: 10px;
+      position: relative;
     }
     .photo-container {
       display: flex;
       justify-content: center;
       gap: 15px;
-      margin-bottom: 15px;
-      margin-top: 100px; /* más margen para bajar fotos */
-      flex-wrap: nowrap;
+      position: absolute;
+      bottom: 20px; /* baja las fotos para que no tapen el encabezado */
+      width: 100%;
+      padding: 0 20px;
+      box-sizing: border-box;
     }
     .photo-container img {
       width: 140px;
@@ -47,6 +41,21 @@
       border-radius: 20px;
       box-shadow: 0 0 10px rgba(255,105,149,0.7);
       border: 4px solid #ff6995;
+    }
+    .content-wrapper {
+      max-width: 460px;
+      margin: 0 auto;
+      padding: 20px 15px 30px;
+      background: rgba(255 255 255 / 0.7);
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+    }
+    h1, h2 {
+      margin: 0.2em 0;
+    }
+    p {
+      font-size: 1.1rem;
+      margin: 0.5em 0 1em;
     }
     .btn {
       background-color: #ff6995;
@@ -66,32 +75,18 @@
       0%, 100% { transform: scale(1); }
       50% { transform: scale(1.1); }
     }
-    .heart {
-      position: fixed;
-      top: -20px;
-      font-size: 22px;
-      color: #ff6995;
-      animation: fall 6s linear infinite;
-      opacity: 0.8;
-      pointer-events: none;
-      z-index: -1;
-    }
-    @keyframes fall {
-      to {
-        transform: translateY(110vh) rotate(360deg);
-        opacity: 0;
-      }
-    }
   </style>
 </head>
 <body>
 
-  <div class="content-wrapper">
+  <div class="header">
     <div class="photo-container">
       <img src="julia.jpg" alt="Foto de Julia" />
       <img src="lola.jpg" alt="Foto de Lola" />
     </div>
+  </div>
 
+  <div class="content-wrapper">
     <h1>🎈 Julia & Lola 🎈</h1>
     <h2>✨ ¡Cumplimos 10 años! ✨</h2>
     <p>¡Celebra con nosotras una tarde llena de alegría y capibaras!</p>
@@ -102,19 +97,6 @@
     <a class="btn" href="https://maps.app.goo.gl/">📍 Cómo llegar</a>
     <a class="btn" href="https://wa.me/34627685889?text=🎉%20Hola!%20Confirmamos%20nuestra%20asistencia%20al%20cumple%20de%20Julia%20y%20Lola.%20¡Nos%20vemos%20allí!%20😊">💬 Confirmar asistencia</a>
   </div>
-
-  <script>
-    function createHeart() {
-      const heart = document.createElement('div');
-      heart.classList.add('heart');
-      heart.style.left = Math.random() * 100 + 'vw';
-      heart.style.animationDuration = (Math.random() * 3 + 3) + 's';
-      heart.textContent = '❤️';
-      document.body.appendChild(heart);
-      setTimeout(() => heart.remove(), 6000);
-    }
-    setInterval(createHeart, 400);
-  </script>
 
 </body>
 </html>
