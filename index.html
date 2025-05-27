@@ -11,7 +11,7 @@
       background: url('fondo3.png') no-repeat center top;
       background-size: cover;
       margin: 0;
-      padding: 0 0 60px;
+      padding: 0 0 40px 0;
       color: #5c3b26;
       text-shadow: 1px 1px 2px #fff8e7;
       overflow-x: hidden;
@@ -33,8 +33,6 @@
       pointer-events: none;
       user-select: none;
       will-change: transform, opacity;
-      filter: none;
-      text-shadow: none;
     }
     @keyframes caer {
       0% { transform: translateY(-10vh) scale(1) rotate(-2deg); opacity: 0.35;}
@@ -44,70 +42,64 @@
     .fotos-cumple {
       display: flex;
       justify-content: center;
-      gap: 13px;
-      margin-top: 36vw;
-      margin-bottom: 7vw;
+      gap: 10px;
+      margin-top: 33vw;
+      margin-bottom: 5vw;
       width: 100%;
-      max-width: 340px;
+      max-width: 330px;
       z-index: 2;
       position: relative;
     }
     .fotos-cumple img {
-      width: 41vw;
-      max-width: 135px;
-      height: 37vw;
-      max-height: 155px;
+      width: 40vw;
+      max-width: 120px;
+      height: 35vw;
+      max-height: 140px;
       object-fit: cover;
-      border-radius: 18px;
-      border: 4px solid #ff6995;
-      box-shadow: 0 0 12px rgba(255,105,149,0.5);
+      border-radius: 16px;
+      border: 3px solid #ff6995;
+      box-shadow: 0 0 8px rgba(255,105,149,0.4);
       background: #fff7;
     }
     .texto-cumple {
-      font-size: 1.15em;
+      font-size: 1.14em;
       font-weight: 600;
       letter-spacing: 0.2px;
       text-align: center;
-      max-width: 380px;
+      max-width: 330px;
       margin: 0 auto;
-      margin-bottom: 1.2vw;
+      margin-bottom: 1vw;
       background: none !important;
       text-shadow: 1px 1px 2px #fff9, 0 2px 8px #fff8;
       line-height: 1.15;
     }
     .nombres {
-      font-size: 1.42em;
+      font-size: 1.38em;
       font-weight: 700;
       display: block;
       letter-spacing: 1px;
-      margin-bottom: 0px;
+      margin-bottom: 0;
     }
-    .nombre-julia {
-      color: #ff469e;
-      font-weight: 700;
-    }
-    .nombre-lola {
-      color: #ffb968;
-      font-weight: 700;
-    }
+    .nombre-julia { color: #ff469e; font-weight: 700;}
+    .nombre-lola { color: #ffb968; font-weight: 700;}
     .nombre-and {
       background: linear-gradient(90deg, #ff469e 0%, #ffb968 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
       font-weight: 900;
-      font-size: 1.1em;
+      font-size: 1.07em;
       padding: 0 0.11em;
     }
     .texto-cumple .cumple-edad {
-      font-size: 1.18em;
+      font-size: 1.12em;
       display: block;
       color: #ff1da7;
       font-weight: bold;
       margin-bottom: 0;
-      padding: 0.13em 0.1em 0.09em 0.1em;
+      padding: 0.08em 0.1em 0.04em 0.1em;
       border-radius: 0;
-      letter-spacing: 1.3px;
+      letter-spacing: 1.1px;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -148,22 +140,56 @@
     }
     @keyframes palpitarSuave {
       0%, 100% { transform: scale(1);}
-      25% { transform: scale(1.032);}
+      25% { transform: scale(1.021);}
       40% { transform: scale(0.99);}
-      65% { transform: scale(1.012);}
+      65% { transform: scale(1.01);}
       80% { transform: scale(1.01);}
     }
-    .espacio-capibaras {
-      width: 100%;
-      height: 52vw;
-      min-height: 110px;
-      max-height: 180px;
-      pointer-events: none;
-      user-select: none;
+    .subfrase-grande-rosa {
+      font-size: 1.05em;
+      font-weight: 800;
+      width: 97vw;
+      max-width: 320px;
+      margin: 0.8em auto 0.6em auto;
+      color: #ff3d8b;
+      text-align: center;
+      letter-spacing: 1px;
+      text-shadow:
+        0 0 16px #fff,
+        0 0 30px #ffb3dd,
+        0 0 62px #fff0,
+        0 2px 10px #fff9,
+        0 1px 4px #ffd,
+        1px 1px 0 #fff,
+        0 0 0 #ff47c7;
+      line-height: 1.12;
+      font-family: 'Fredoka', sans-serif;
+      z-index: 3;
+      border: none;
+      background: none !important;
+      white-space: normal;
+      overflow-wrap: break-word;
+      animation: brillaNeon 1.7s infinite alternate, shake 4s infinite ease-in-out;
+    }
+    @keyframes brillaNeon {
+      0%,100% { text-shadow: 0 2px 12px #fff, 1px 1px 0 #fff, 0 0 24px #ff3d8b66; color: #ff3d8b;}
+      50% { text-shadow: 0 2px 24px #fff8, 1px 1px 0 #fff, 0 0 36px #ffb3dd; color: #fd3a69;}
+    }
+    @keyframes shake {
+      0%,100% { transform: translateX(0);}
+      22% { transform: translateX(-0.7px);}
+      58% { transform: translateX(0.7px);}
+    }
+    .img-munecos {
+      display: block;
+      margin: 0 auto 1em auto;
+      max-width: 290px;
+      width: 82vw;
+      height: auto;
     }
     .zona-final {
       width: 100%;
-      max-width: 430px;
+      max-width: 360px;
       margin: 0 auto;
       display: flex;
       flex-direction: column;
@@ -171,32 +197,30 @@
       background: none !important;
     }
     .evento-info, .countdown {
-      font-size: 1.06em;
-      font-weight: 600;
+      font-size: 1.12em;
+      font-weight: 700;
       letter-spacing: 0.05px;
-      margin-bottom: 14px;
-      margin-top: 0;
+      margin-bottom: 0.6em;
+      margin-top: 0.2em;
       text-align: center;
       text-shadow: 1px 1px 2px #fffdf6c5;
       background: none !important;
       color: #a04a3c;
     }
     .countdown {
-      font-size: 1.02em;
       color: #ff3d77;
       text-shadow: 0 0 8px #fff8, 0 1px 3px #ffd;
-      margin-bottom: 15px;
-      background: none !important;
+      margin-bottom: 1em;
+      font-weight: 900;
     }
     .botones-cumple {
       display: flex;
       flex-direction: column;
       align-items: stretch;
-      gap: 12px;
+      gap: 10px;
       width: 100%;
-      max-width: 340px;
-      margin: 0 auto 0 auto;
-      margin-bottom: 18px;
+      max-width: 330px;
+      margin: 0 auto 0.6em auto;
     }
     .btn {
       background: linear-gradient(90deg, #ffb968 0%, #ff66ad 100%);
@@ -221,72 +245,12 @@
       0%   { box-shadow: 0 0 19px #ffb96833, 0 0 2px #fff, 0 0 22px #ffb96844;}
       100% { box-shadow: 0 0 32px #ffb96899, 0 0 12px #fff4, 0 0 34px #ffd3;}
     }
-    .subfrase-grande-rosa {
-      font-size: 1.5em;
-      font-weight: 900;
-      width: 98vw;
-      max-width: 98vw;
-      margin: 42px auto 10px auto;
-      color: #ff3d8b;
-      text-align: center;
-      letter-spacing: 1px;
-      text-shadow:
-        0 0 16px #fff,
-        0 0 30px #ffb3dd,
-        0 0 62px #fff0,
-        0 2px 10px #fff9,
-        0 1px 4px #ffd,
-        1px 1px 0 #fff,
-        0 0 0 #ff47c7;
-      line-height: 1.13;
-      font-family: 'Fredoka', sans-serif;
-      z-index: 3;
-      border: none;
-      background: none !important;
-      white-space: normal;
-      overflow-wrap: break-word;
-      animation: brillaNeon 1.7s infinite alternate, shake 4s infinite ease-in-out;
-    }
-    @keyframes brillaNeon {
-      0%,100% {
-        text-shadow:
-          0 2px 12px #fff,
-          0 1px 4px #ffd,
-          1px 1px 0 #fff,
-          0 0 0 #ff47c7,
-          0 0 24px #ff3d8b66;
-        color: #ff3d8b;
-      }
-      40% {
-        text-shadow:
-          0 2px 24px #fff8,
-          0 1px 9px #ffd,
-          1px 1px 0 #fff,
-          0 0 14px #ff47c7,
-          0 0 36px #ffb3dd;
-        color: #fd3a69;
-      }
-      70% {
-        text-shadow:
-          0 2px 36px #fffbe9,
-          0 1px 7px #ffe5,
-          1px 1px 0 #fff,
-          0 0 22px #ff47c7,
-          0 0 60px #ffb3dd66;
-        color: #ff63a5;
-      }
-    }
-    @keyframes shake {
-      0%,100% { transform: translateX(0);}
-      22% { transform: translateX(-0.7px);}
-      58% { transform: translateX(0.7px);}
-    }
     @media (max-width: 600px) {
-      .fotos-cumple { margin-top: 39vw; }
-      .fotos-cumple img { width: 43vw; height: 38vw; }
+      .fotos-cumple { margin-top: 33vw; }
+      .fotos-cumple img { width: 40vw; height: 35vw; }
       .texto-cumple { font-size: 1em; }
-      .espacio-capibaras { height: 32vw; min-height: 60px; }
-      .subfrase-grande-rosa { font-size: 1.07em; margin-top: 34px; }
+      .img-munecos { max-width: 88vw; }
+      .subfrase-grande-rosa { font-size: 0.98em; }
       .botones-cumple { max-width: 98vw; }
     }
   </style>
@@ -311,29 +275,29 @@
     <span class="cumple-edad">¡Cumplimos 10 años!</span>
   </div>
 
-  <!-- Espacio invisible para los capibaras -->
-  <div class="espacio-capibaras"></div>
+  <!-- Frase rosa fuerte, justo arriba del dibujo -->
+  <div class="subfrase-grande-rosa">
+    ¡Celebra con nosotras una tarde llena de alegría y capibaras! 🎉
+  </div>
 
-  <!-- Bloque final: dirección, botones, cuenta atrás -->
+  <!-- Imagen de los muñecos -->
+  <img class="img-munecos" src="capibaras.png" alt="Dibujo de capibaras" />
+
+  <!-- Zona final: dirección, cuenta atrás, botones -->
   <div class="zona-final">
-    <div class="botones-cumple">
-      <button class="btn" id="botonFiesta">🎵 Pulsa aquí para que comience la fiesta 🎉</button>
-      <a class="btn" href="https://maps.app.goo.gl/aKN1YwvMK49eKKT98" target="_blank">📍 Cómo llegar</a>
-      <a class="btn" href="https://wa.me/34627685889?text=🎉%20Hola!%20Confirmamos%20nuestra%20asistencia%20al%20cumple%20de%20Julia%20y%20Lola.%20¡Nos%20vemos%20allí!%20😊" target="_blank">💬 Confirmar asistencia</a>
-    </div>
     <div class="evento-info">
       16 Junio - 17:00 h<br>
       Calle Hispalis, 2 (Bollullos de la Mitación)
     </div>
     <div class="countdown" id="countdown"></div>
+    <div class="botones-cumple">
+      <button class="btn" id="botonFiesta">🎵 Pulsa aquí para que comience la fiesta 🎉</button>
+      <a class="btn" href="https://maps.app.goo.gl/aKN1YwvMK49eKKT98" target="_blank">📍 Cómo llegar</a>
+      <a class="btn" href="https://wa.me/34627685889?text=🎉%20Hola!%20Confirmamos%20nuestra%20asistencia%20al%20cumple%20de%20Julia%20y%20Lola.%20¡Nos%20vemos%20allí!%20😊" target="_blank">💬 Confirmar asistencia</a>
+    </div>
   </div>
 
-  <!-- Frase central BAJO TODO, rosa fuerte, parpadeo neón -->
-  <div class="subfrase-grande-rosa">
-    ¡Celebra con nosotras una tarde llena de alegría y capibaras! 🎉
-  </div>
-
-  <!-- Cuenta atrás JS -->
+  <!-- JS: cuenta atrás -->
   <script>
     const eventDate = new Date(2025, 5, 16, 17, 0, 0); // 16 junio 2025, 17:00
     function updateCountdown() {
@@ -354,7 +318,7 @@
     updateCountdown();
   </script>
 
-  <!-- Corazoncitos JS -->
+  <!-- JS corazones -->
   <script>
     const corazonesDiv = document.getElementById('corazones');
     const emojis = ['💖','💗','💕'];
@@ -362,24 +326,23 @@
       const corazon = document.createElement('span');
       corazon.className = 'corazon';
       corazon.style.left = (Math.random()*100)+'vw';
-      corazon.style.fontSize = (1.0 + Math.random()*0.2)+'em'; // menos tamaño variable
+      corazon.style.fontSize = (1.0 + Math.random()*0.2)+'em';
       corazon.style.animationDuration = (7.8 + Math.random()*2.5)+'s';
       corazon.textContent = emojis[Math.floor(Math.random()*emojis.length)];
-      corazon.style.opacity = 0.18 + Math.random()*0.14; // menos brillo
+      corazon.style.opacity = 0.18 + Math.random()*0.14;
       corazonesDiv.appendChild(corazon);
       setTimeout(()=>corazon.remove(), 9500);
     }
-    setInterval(creaCorazon, 2000); // menos corazones aún
+    setInterval(creaCorazon, 2000);
     for(let i=0; i<1; i++) setTimeout(creaCorazon, i*1100);
   </script>
 
-  <!-- Confetti, Fuegos Artificiales y Cumpleaños Feliz JS -->
+  <!-- Confetti, música -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
   <audio id="cumpleAudio" preload="auto" src="audio1.mp3"></audio>
   <script>
     const botonFiesta = document.getElementById('botonFiesta');
     const cumpleAudio = document.getElementById('cumpleAudio');
-
     function lanzarConfetiYFuegos() {
       confetti({
         particleCount: 160,
@@ -400,14 +363,11 @@
       cumpleAudio.currentTime = 0;
       const playPromise = cumpleAudio.play();
       if (playPromise !== undefined) {
-        playPromise.then(_ => {
-          // Todo bien
-        }).catch(error => {
+        playPromise.then(_ => {}).catch(error => {
           alert('🔇 El navegador está bloqueando el sonido. Activa el sonido o pulsa de nuevo el botón.');
         });
       }
     }
-
     botonFiesta.addEventListener('click', lanzarConfetiYFuegos);
   </script>
 </body>
