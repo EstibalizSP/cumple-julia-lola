@@ -51,9 +51,9 @@
       position: relative;
     }
     .fotos-cumple img {
-      width: 45vw;  /* Incrementado tamaño */
+      width: 45vw;
       max-width: 140px;
-      height: 40vw; /* Incrementado tamaño */
+      height: 40vw;
       max-height: 160px;
       object-fit: cover;
       border-radius: 16px;
@@ -75,9 +75,9 @@
     .nombres {
       font-size: 1.5em;
       font-weight: 700;
-      display: block; /* Separar en bloque */
+      display: block;
       letter-spacing: 1px;
-      margin-bottom: 0.15em; /* Espacio entre nombre y edad */
+      margin-bottom: 0.15em;
     }
     .nombre-julia { color: #ff469e; font-weight: 700;}
     .nombre-lola { color: #ffb968; font-weight: 700;}
@@ -91,44 +91,44 @@
       padding: 0 0.11em;
     }
     .cumple-edad {
-      font-size: 1.2em; /* Reducido un poco más */
+      font-size: 1.2em;
       color: #ff1da7;
       font-weight: bold;
       margin: 0;
       padding: 0.08em 0.1em 0.04em 0.1em;
       letter-spacing: 1.1px;
       text-shadow:
-        0 0 8px #ffb3f7,
-        0 0 18px #ffb4e2,
-        0 0 28px #ff79c8,
-        0 0 32px #ff41b6,
-        0 2px 12px #ffe7fa,
-        0 0 38px #ff41b6cc,
-        0 0 3px #fff,
-        1px 1px 0 #fff;
-      animation: palpitarSuave 2.1s infinite cubic-bezier(.46,1.4,.54,1), neonCumple 1.55s infinite alternate;
+        0 0 14px #ffb3f7,
+        0 0 28px #ffb4e2,
+        0 0 45px #ff79c8,
+        0 0 50px #ff41b6,
+        0 3px 20px #ffe7fa,
+        0 0 65px #ff41b6cc,
+        0 0 10px #fff,
+        2px 2px 0 #fff;
+      animation: palpitarSuave 2.1s infinite cubic-bezier(.46,1.4,.54,1), neonCumple 1.2s infinite alternate;
     }
     @keyframes neonCumple {
       0%,100% {
         text-shadow:
-          0 0 8px #ffb3f7,
-          0 0 18px #ffb4e2,
-          0 0 28px #ff79c8,
-          0 0 32px #ff41b6,
-          0 2px 12px #ffe7fa,
-          0 0 38px #ff41b6cc,
-          0 0 3px #fff,
-          1px 1px 0 #fff;
+          0 0 14px #ffb3f7,
+          0 0 28px #ffb4e2,
+          0 0 45px #ff79c8,
+          0 0 50px #ff41b6,
+          0 3px 20px #ffe7fa,
+          0 0 65px #ff41b6cc,
+          0 0 10px #fff,
+          2px 2px 0 #fff;
         color: #ff1da7;
       }
       50% {
         text-shadow:
-          0 0 19px #ffb3f7,
-          0 0 22px #ea8fff,
-          0 0 35px #ff79c8,
-          0 2px 17px #ffe7fa,
-          0 0 55px #ff41b6cc,
-          1px 1px 0 #fff;
+          0 0 25px #ffb3f7,
+          0 0 30px #ea8fff,
+          0 0 50px #ff79c8,
+          0 3px 30px #ffe7fa,
+          0 0 70px #ff41b6cc,
+          3px 3px 0 #fff;
         color: #ff7ede;
       }
     }
@@ -150,7 +150,7 @@
       font-weight: 800;
       width: 97vw;
       max-width: 320px;
-      margin: 9em auto 1.1em auto; /* Bajamos mucho más la frase */
+      margin: 12em auto 1.1em auto; /* Bajamos más la frase */
       color: #ff3d8b;
       text-align: center;
       letter-spacing: 1px;
@@ -239,10 +239,10 @@
       100% { box-shadow: 0 0 32px #ffb96899, 0 0 12px #fff4, 0 0 34px #ffd3;}
     }
     @media (max-width: 600px) {
-      .fotos-cumple { margin-top: 45vw; gap: 4vw; }
+      .fotos-cumple { margin-top: 55vw; gap: 4vw; }
       .fotos-cumple img { width: 48vw; height: 42vw; max-width: 160px; max-height: 170px; }
       .texto-cumple { font-size: 1.09em; }
-      .subfrase-grande-rosa { font-size: 1em; margin: 6.5em auto 1.4em auto;}
+      .subfrase-grande-rosa { font-size: 1em; margin: 14em auto 1.4em auto; }
       .botones-cumple { max-width: 98vw; }
       .espacio-fondo { height: 35vw; min-height: 90px;}
     }
@@ -354,4 +354,3 @@
   </script>
 </body>
 </html>
-
