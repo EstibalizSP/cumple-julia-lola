@@ -84,11 +84,23 @@
       letter-spacing: 1px;
       margin-bottom: 0px;
     }
+    /* PALPITANDO */
     .texto-cumple .cumple-edad {
-      font-size: 1.13em;
+      font-size: 1.19em;
       display: block;
       color: #ab67fd;
       margin-bottom: 0px;
+      animation: palpitar 1.35s infinite;
+      animation-timing-function: cubic-bezier(.4,1.5,.7,1);
+      text-shadow: 0 0 18px #d1b6ff99, 1px 2px 6px #fff8;
+    }
+    @keyframes palpitar {
+      0%, 100% { transform: scale(1);}
+      25% { transform: scale(1.12);}
+      40% { transform: scale(0.98);}
+      55% { transform: scale(1.08);}
+      70% { transform: scale(0.96);}
+      85% { transform: scale(1.03);}
     }
     /* Espacio para dejar libre los capibaras */
     .espacio-capibaras {
@@ -99,16 +111,32 @@
       pointer-events: none;
       user-select: none;
     }
-    /* Frase bajo capibaras */
+    /* Frase bajo capibaras, MARQUESINA animada */
     .subfrase-grande {
-      font-size: 1.13em;
-      color: #ffa85a;
-      font-weight: 600;
-      text-align: center;
-      max-width: 420px;
-      margin: 18px auto 28px auto;
-      text-shadow: 1px 1px 8px #fff8, 0 1px 3px #ffd;
+      font-size: 1.18em;
+      font-weight: 700;
+      max-width: 98vw;
+      white-space: nowrap;
+      overflow: hidden;
+      position: relative;
+      margin: 10px 0 32px 0;
+      height: 2.2em;
+      z-index: 3;
     }
+    .subfrase-marquesina {
+      display: inline-block;
+      color: #ff3d77;
+      text-shadow: 0 0 8px #fff, 0 1px 8px #fffd;
+      padding-left: 100vw;
+      animation: marquee 14s linear infinite;
+      font-family: 'Fredoka', sans-serif;
+      letter-spacing: 0.5px;
+    }
+    @keyframes marquee {
+      0%   { transform: translateX(0);}
+      100% { transform: translateX(-110vw);}
+    }
+    /* Zona final */
     .zona-final {
       width: 100%;
       max-width: 430px;
@@ -131,13 +159,14 @@
       color: #a04a3c;
     }
     .countdown {
-      font-size: 1.11em;
+      font-size: 1.12em;
       font-weight: bold;
-      color: #ff6995;
+      color: #ff3d77;
       margin-bottom: 18px;
-      text-shadow: 1px 1px 2px #fffdf6e0;
+      text-shadow: 0 0 8px #fff8, 0 1px 3px #ffd;
       background: none !important;
     }
+    /* BOTÓN GLOW */
     .btn {
       background-color: #ff6995;
       color: white;
@@ -147,7 +176,6 @@
       display: block;
       font-size: 1.15em;
       margin: 15px 0 0 0;
-      box-shadow: 0 0 18px #ff699577;
       font-weight: 700;
       user-select: none;
       border: none;
@@ -155,16 +183,25 @@
       max-width: 320px;
       transition: background .2s;
       text-align: center;
+      box-shadow: 0 0 25px #ff699577, 0 0 2px #fff, 0 0 30px #ff6995aa;
+      animation: glow 1.2s infinite alternate;
     }
-    .btn:active {
-      background: #ff4981;
+    @keyframes glow {
+      0%   { box-shadow: 0 0 25px #ff699577, 0 0 2px #fff, 0 0 30px #ff6995aa; }
+      100% { box-shadow: 0 0 35px #ff6995cc, 0 0 14px #fff5, 0 0 50px #fff2;}
     }
+    /* BOTÓN CONFIRMAR: degradado rosa-naranja */
     .btn.whatsapp {
-      background: #fff;
-      color: #ff6995;
+      background: linear-gradient(90deg, #ff66ad 0%, #ffb968 100%);
+      color: white;
       border: 2px solid #ff6995;
       margin-top: 14px;
-      box-shadow: 0 0 15px #ff699566;
+      box-shadow: 0 0 28px #ffb96855, 0 0 12px #ff699577;
+      animation: glow2 1.3s infinite alternate;
+    }
+    @keyframes glow2 {
+      0%   { box-shadow: 0 0 30px #ffb96855, 0 0 15px #ffb96866, 0 0 12px #ff699577;}
+      100% { box-shadow: 0 0 42px #ffb968aa, 0 0 24px #fff8, 0 0 18px #ff699599;}
     }
     @media (max-width: 500px) {
       .fotos-cumple { margin-top: 39vw; }
@@ -172,6 +209,7 @@
       .texto-cumple { font-size: 1.06em; }
       .espacio-capibaras { height: 76vw; min-height: 170px; }
       .evento-info { margin-top: 150px; }
+      .subfrase-grande { font-size: 1em;}
     }
   </style>
 </head>
@@ -194,9 +232,9 @@
   <!-- Espacio invisible para los capibaras -->
   <div class="espacio-capibaras"></div>
 
-  <!-- Frase central bajo capibaras -->
+  <!-- Frase central bajo capibaras, EN MOVIMIENTO -->
   <div class="subfrase-grande">
-    ¡Celebra con nosotras una tarde llena de alegría y capibaras!
+    <span class="subfrase-marquesina">¡Celebra con nosotras una tarde llena de alegría y capibaras! &nbsp; 🎉&nbsp;</span>
   </div>
 
   <!-- Bloque final: dirección, botones, cuenta atrás -->
