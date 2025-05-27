@@ -27,9 +27,9 @@
     }
     .corazon {
       position: absolute;
-      font-size: 1.2em;
-      opacity: 0.28;
-      animation: caer 7s linear infinite;
+      font-size: 1.14em;
+      opacity: 0.22;
+      animation: caer 8s linear infinite;
       pointer-events: none;
       user-select: none;
       will-change: transform, opacity;
@@ -37,16 +37,16 @@
       text-shadow: none;
     }
     @keyframes caer {
-      0% { transform: translateY(-10vh) scale(1) rotate(-4deg); opacity: 0.5;}
-      40% { opacity: 0.6;}
-      100% { transform: translateY(104vh) scale(0.95) rotate(6deg); opacity: 0;}
+      0% { transform: translateY(-10vh) scale(1) rotate(-2deg); opacity: 0.35;}
+      60% { opacity: 0.54;}
+      100% { transform: translateY(104vh) scale(0.95) rotate(3deg); opacity: 0;}
     }
     .fotos-cumple {
       display: flex;
       justify-content: center;
       gap: 13px;
       margin-top: 36vw;
-      margin-bottom: 8px;
+      margin-bottom: 7vw;
       width: 100%;
       max-width: 340px;
       z-index: 2;
@@ -64,24 +64,23 @@
       background: #fff7;
     }
     .texto-cumple {
-      font-size: 1.22em;
+      font-size: 1.15em;
       font-weight: 600;
       letter-spacing: 0.2px;
       text-align: center;
       max-width: 380px;
-      margin: 0 auto 0 auto;
-      margin-bottom: 2vw;
+      margin: 0 auto;
+      margin-bottom: 1.2vw;
       background: none !important;
       text-shadow: 1px 1px 2px #fff9, 0 2px 8px #fff8;
       line-height: 1.15;
     }
     .nombres {
-      font-size: 1.65em;
+      font-size: 1.42em;
       font-weight: 700;
       display: block;
       letter-spacing: 1px;
       margin-bottom: 0px;
-      /* No color aquí: color por spans internos */
     }
     .nombre-julia {
       color: #ff469e;
@@ -101,63 +100,64 @@
       padding: 0 0.11em;
     }
     .texto-cumple .cumple-edad {
-      font-size: 2em;
+      font-size: 1.18em;
       display: block;
       color: #ff1da7;
       font-weight: bold;
       margin-bottom: 0;
-      padding: 0.12em 0.1em;
+      padding: 0.13em 0.1em 0.09em 0.1em;
       border-radius: 0;
-      letter-spacing: 1.5px;
-      white-space: nowrap; /* una línea */
+      letter-spacing: 1.3px;
+      white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
       text-shadow:
-        0 0 18px #ffb3f7,
-        0 0 26px #ffb4e2,
-        0 0 48px #ff79c8,
-        0 0 56px #ff41b6,
-        0 2px 22px #ffe7fa,
-        0 0 80px #ff41b6cc,
-        0 0 8px #fff,
+        0 0 8px #ffb3f7,
+        0 0 18px #ffb4e2,
+        0 0 28px #ff79c8,
+        0 0 32px #ff41b6,
+        0 2px 12px #ffe7fa,
+        0 0 38px #ff41b6cc,
+        0 0 3px #fff,
         1px 1px 0 #fff;
-      animation: palpitarBoton 1.3s infinite cubic-bezier(.4,1.5,.7,1), neonCumple 1.1s infinite alternate;
+      animation: palpitarSuave 2.1s infinite cubic-bezier(.46,1.4,.54,1), neonCumple 1.55s infinite alternate;
     }
     @keyframes neonCumple {
       0%,100% {
         text-shadow:
-          0 0 18px #ffb3f7,
-          0 0 26px #ffb4e2,
-          0 0 48px #ff79c8,
-          0 0 56px #ff41b6,
-          0 2px 22px #ffe7fa,
-          0 0 80px #ff41b6cc,
-          0 0 8px #fff,
+          0 0 8px #ffb3f7,
+          0 0 18px #ffb4e2,
+          0 0 28px #ff79c8,
+          0 0 32px #ff41b6,
+          0 2px 12px #ffe7fa,
+          0 0 38px #ff41b6cc,
+          0 0 3px #fff,
           1px 1px 0 #fff;
         color: #ff1da7;
       }
       50% {
         text-shadow:
-          0 0 34px #ffb3f7,
-          0 0 46px #ea8fff,
-          0 0 60px #ff79c8,
-          0 2px 32px #ffe7fa,
-          0 0 110px #ff41b6cc,
+          0 0 19px #ffb3f7,
+          0 0 22px #ea8fff,
+          0 0 35px #ff79c8,
+          0 2px 17px #ffe7fa,
+          0 0 55px #ff41b6cc,
           1px 1px 0 #fff;
         color: #ff7ede;
       }
     }
-    @keyframes palpitarBoton {
+    @keyframes palpitarSuave {
       0%, 100% { transform: scale(1);}
-      25% { transform: scale(1.07);}
-      55% { transform: scale(1.04);}
-      70% { transform: scale(0.96);}
+      25% { transform: scale(1.032);}
+      40% { transform: scale(0.99);}
+      65% { transform: scale(1.012);}
+      80% { transform: scale(1.01);}
     }
     .espacio-capibaras {
       width: 100%;
-      height: 60vw; /* Menos espacio para que no tape nada */
-      min-height: 130px;
-      max-height: 210px;
+      height: 52vw;
+      min-height: 110px;
+      max-height: 180px;
       pointer-events: none;
       user-select: none;
     }
@@ -168,37 +168,35 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-top: 0;
       background: none !important;
     }
-    .evento-info {
-      font-size: 1.14rem;
+    .evento-info, .countdown {
+      font-size: 1.06em;
       font-weight: 600;
-      letter-spacing: 0.1px;
-      margin-bottom: 18px;
-      margin-top: 12px;
+      letter-spacing: 0.05px;
+      margin-bottom: 14px;
+      margin-top: 0;
       text-align: center;
       text-shadow: 1px 1px 2px #fffdf6c5;
       background: none !important;
       color: #a04a3c;
     }
     .countdown {
-      font-size: 1.12em;
-      font-weight: bold;
+      font-size: 1.02em;
       color: #ff3d77;
-      margin-bottom: 18px;
       text-shadow: 0 0 8px #fff8, 0 1px 3px #ffd;
+      margin-bottom: 15px;
       background: none !important;
     }
     .botones-cumple {
       display: flex;
       flex-direction: column;
       align-items: stretch;
-      gap: 13px;
+      gap: 12px;
       width: 100%;
       max-width: 340px;
       margin: 0 auto 0 auto;
-      margin-bottom: 24px;
+      margin-bottom: 18px;
     }
     .btn {
       background: linear-gradient(90deg, #ffb968 0%, #ff66ad 100%);
@@ -210,48 +208,34 @@
       font-size: 1.13em;
       font-weight: 700;
       user-select: none;
-      border: none;
+      border: 2px solid #ffb968;
       width: 100%;
       box-sizing: border-box;
-      transition: background .2s;
+      transition: background .2s, box-shadow .2s;
       text-align: center;
-      box-shadow: 0 0 25px #ffb96877, 0 0 2px #fff, 0 0 30px #ffb96899;
-      animation: palpitarBoton 1.3s infinite, glow 1.2s infinite alternate;
+      box-shadow: 0 0 19px #ffb96833, 0 0 2px #fff, 0 0 22px #ffb96844;
+      animation: palpitarSuave 2.1s infinite cubic-bezier(.46,1.4,.54,1), glowBtn 2.3s infinite alternate;
       cursor: pointer;
     }
-    @keyframes glow {
-      0%   { box-shadow: 0 0 25px #ffb96877, 0 0 2px #fff, 0 0 30px #ffb96899;}
-      100% { box-shadow: 0 0 38px #ffb968cc, 0 0 16px #fff5, 0 0 55px #fff2;}
-    }
-    .btn.whatsapp {
-      background: linear-gradient(90deg, #ff66ad 0%, #ffb968 100%);
-      border: 2px solid #ff6995;
-      box-shadow: 0 0 28px #ffb96855, 0 0 12px #ff699577;
-      animation: palpitarBoton 1.3s infinite, glow 1.2s infinite alternate;
-    }
-    .btn.fiesta {
-      background: linear-gradient(90deg, #ffe168 0%, #fd4eff 100%);
-      border: 2px solid #fd9cfa;
-      color: #fff;
-      font-size: 1.13em;
-      box-shadow: 0 0 38px #fd4eff55, 0 0 15px #ffe16888;
-      animation: palpitarBoton 1.3s infinite, glow 1.2s infinite alternate;
+    @keyframes glowBtn {
+      0%   { box-shadow: 0 0 19px #ffb96833, 0 0 2px #fff, 0 0 22px #ffb96844;}
+      100% { box-shadow: 0 0 32px #ffb96899, 0 0 12px #fff4, 0 0 34px #ffd3;}
     }
     .subfrase-grande-rosa {
-      font-size: 2em;
+      font-size: 1.5em;
       font-weight: 900;
-      width: 99vw;
+      width: 98vw;
       max-width: 98vw;
-      margin: 36px auto 18px auto; /* más abajo */
+      margin: 42px auto 10px auto;
       color: #ff3d8b;
       text-align: center;
       letter-spacing: 1px;
       text-shadow:
-        0 0 28px #fff,
-        0 0 60px #ffb3dd,
-        0 0 120px #fff0,
-        0 2px 22px #fff9,
-        0 1px 8px #ffd,
+        0 0 16px #fff,
+        0 0 30px #ffb3dd,
+        0 0 62px #fff0,
+        0 2px 10px #fff9,
+        0 1px 4px #ffd,
         1px 1px 0 #fff,
         0 0 0 #ff47c7;
       line-height: 1.13;
@@ -261,51 +245,48 @@
       background: none !important;
       white-space: normal;
       overflow-wrap: break-word;
-      animation: brillaNeon 1.45s infinite alternate, shake 2s infinite ease-in-out;
+      animation: brillaNeon 1.7s infinite alternate, shake 4s infinite ease-in-out;
     }
     @keyframes brillaNeon {
       0%,100% {
         text-shadow:
-          0 2px 20px #fff,
-          0 1px 8px #ffd,
+          0 2px 12px #fff,
+          0 1px 4px #ffd,
           1px 1px 0 #fff,
           0 0 0 #ff47c7,
-          0 0 40px #ff3d8b99;
+          0 0 24px #ff3d8b66;
         color: #ff3d8b;
       }
-      35% {
+      40% {
         text-shadow:
-          0 2px 45px #fff8,
-          0 1px 18px #ffd,
+          0 2px 24px #fff8,
+          0 1px 9px #ffd,
           1px 1px 0 #fff,
-          0 0 38px #ff47c7,
-          0 0 70px #ffb3dd;
+          0 0 14px #ff47c7,
+          0 0 36px #ffb3dd;
         color: #fd3a69;
       }
-      60% {
+      70% {
         text-shadow:
-          0 2px 80px #fffbe9,
-          0 1px 16px #ffe5,
+          0 2px 36px #fffbe9,
+          0 1px 7px #ffe5,
           1px 1px 0 #fff,
-          0 0 60px #ff47c7,
-          0 0 120px #ffb3dd66;
+          0 0 22px #ff47c7,
+          0 0 60px #ffb3dd66;
         color: #ff63a5;
       }
     }
     @keyframes shake {
       0%,100% { transform: translateX(0);}
-      18% { transform: translateX(-1.2px);}
-      38% { transform: translateX(1.2px);}
-      56% { transform: translateX(-1px);}
-      74% { transform: translateX(1px);}
+      22% { transform: translateX(-0.7px);}
+      58% { transform: translateX(0.7px);}
     }
     @media (max-width: 600px) {
       .fotos-cumple { margin-top: 39vw; }
       .fotos-cumple img { width: 43vw; height: 38vw; }
-      .texto-cumple { font-size: 1.06em; }
-      .espacio-capibaras { height: 40vw; min-height: 70px; }
-      .evento-info { margin-top: 15px; }
-      .subfrase-grande-rosa { font-size: 1.13em; }
+      .texto-cumple { font-size: 1em; }
+      .espacio-capibaras { height: 32vw; min-height: 60px; }
+      .subfrase-grande-rosa { font-size: 1.07em; margin-top: 34px; }
       .botones-cumple { max-width: 98vw; }
     }
   </style>
@@ -335,19 +316,19 @@
 
   <!-- Bloque final: dirección, botones, cuenta atrás -->
   <div class="zona-final">
+    <div class="botones-cumple">
+      <button class="btn" id="botonFiesta">🎵 Pulsa aquí para que comience la fiesta 🎉</button>
+      <a class="btn" href="https://maps.app.goo.gl/aKN1YwvMK49eKKT98" target="_blank">📍 Cómo llegar</a>
+      <a class="btn" href="https://wa.me/34627685889?text=🎉%20Hola!%20Confirmamos%20nuestra%20asistencia%20al%20cumple%20de%20Julia%20y%20Lola.%20¡Nos%20vemos%20allí!%20😊" target="_blank">💬 Confirmar asistencia</a>
+    </div>
     <div class="evento-info">
       16 Junio - 17:00 h<br>
       Calle Hispalis, 2 (Bollullos de la Mitación)
     </div>
     <div class="countdown" id="countdown"></div>
-    <div class="botones-cumple">
-      <button class="btn fiesta" id="botonFiesta">🎵 Pulsa aquí para que comience la fiesta 🎉</button>
-      <a class="btn" href="https://maps.app.goo.gl/aKN1YwvMK49eKKT98" target="_blank">📍 Cómo llegar</a>
-      <a class="btn whatsapp" href="https://wa.me/34627685889?text=🎉%20Hola!%20Confirmamos%20nuestra%20asistencia%20al%20cumple%20de%20Julia%20y%20Lola.%20¡Nos%20vemos%20allí!%20😊" target="_blank">💬 Confirmar asistencia</a>
-    </div>
   </div>
 
-  <!-- Frase central bajo capibaras, ROSA FUERTE, SIEMPRE ENTERA Y PARPADEO NEÓN -->
+  <!-- Frase central BAJO TODO, rosa fuerte, parpadeo neón -->
   <div class="subfrase-grande-rosa">
     ¡Celebra con nosotras una tarde llena de alegría y capibaras! 🎉
   </div>
@@ -381,15 +362,15 @@
       const corazon = document.createElement('span');
       corazon.className = 'corazon';
       corazon.style.left = (Math.random()*100)+'vw';
-      corazon.style.fontSize = (1.1 + Math.random()*0.2)+'em'; // menos tamaño variable
-      corazon.style.animationDuration = (5.8 + Math.random()*2.5)+'s';
+      corazon.style.fontSize = (1.0 + Math.random()*0.2)+'em'; // menos tamaño variable
+      corazon.style.animationDuration = (7.8 + Math.random()*2.5)+'s';
       corazon.textContent = emojis[Math.floor(Math.random()*emojis.length)];
-      corazon.style.opacity = 0.28 + Math.random()*0.1; // menos brillo
+      corazon.style.opacity = 0.18 + Math.random()*0.14; // menos brillo
       corazonesDiv.appendChild(corazon);
-      setTimeout(()=>corazon.remove(), 9000);
+      setTimeout(()=>corazon.remove(), 9500);
     }
-    setInterval(creaCorazon, 1800); // menos corazones
-    for(let i=0; i<2; i++) setTimeout(creaCorazon, i*700);
+    setInterval(creaCorazon, 2000); // menos corazones aún
+    for(let i=0; i<1; i++) setTimeout(creaCorazon, i*1100);
   </script>
 
   <!-- Confetti, Fuegos Artificiales y Cumpleaños Feliz JS -->
@@ -400,24 +381,21 @@
     const cumpleAudio = document.getElementById('cumpleAudio');
 
     function lanzarConfetiYFuegos() {
-      // Confeti principal
       confetti({
-        particleCount: 180,
-        spread: 90,
+        particleCount: 160,
+        spread: 85,
         origin: { y: 0.6 }
       });
-      // Fuegos artificiales
-      for (let i = 0; i < 7; i++) {
+      for (let i = 0; i < 5; i++) {
         setTimeout(() => {
           confetti({
-            particleCount: 70,
+            particleCount: 48,
             angle: 60 + Math.random() * 60,
-            spread: 90,
+            spread: 70,
             origin: { x: Math.random(), y: Math.random() * 0.5 }
           });
-        }, 300 + i * 260);
+        }, 250 + i * 260);
       }
-      // Música Cumpleaños Feliz
       cumpleAudio.pause();
       cumpleAudio.currentTime = 0;
       const playPromise = cumpleAudio.play();
