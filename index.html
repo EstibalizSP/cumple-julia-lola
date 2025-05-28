@@ -317,6 +317,44 @@
         height: 35vw;
         min-height: 90px;
       }
+      .corazon-doble-con-frase {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 0.4em;
+  z-index: 3;
+  position: relative;
+  width: 100%;
+}
+
+.corazon-doble {
+  font-size: 2.9em;
+  animation: palpitaCorazon 1.25s infinite cubic-bezier(.66,0,0,1);
+  filter: drop-shadow(0 0 9px #ffb3ddaa) drop-shadow(0 0 2px #fff);
+}
+
+@keyframes palpitaCorazon {
+  0%, 100% { transform: scale(1);}
+  15% { transform: scale(1.17);}
+  30% { transform: scale(0.94);}
+  50% { transform: scale(1.08);}
+  70% { transform: scale(1.03);}
+  85% { transform: scale(1.18);}
+}
+
+.frase-amor {
+  margin-top: -0.1em;
+  font-size: 1.01em;
+  font-weight: 700;
+  color: #f257a5;
+  text-shadow:
+    0 2px 9px #fff6,
+    0 0 3px #ffb3dd88,
+    1px 1px 0 #fff;
+  letter-spacing: 0.4px;
+  font-family: 'Fredoka', sans-serif;
+  background: none !important;
+}
     }
   </style>
 </head>
@@ -329,6 +367,11 @@
     <img src="julia1.jpg" alt="Foto de Julia" />
     <img src="lola.jpg" alt="Foto de Lola" />
   </div>
+
+  <div class="corazon-doble-con-frase">
+  <span class="corazon-doble">💞</span>
+  <div class="frase-amor">Con mucho amor, Julia & Lola</div>
+</div>
 
   <!-- Texto con nombres y edad (en dos líneas) -->
   <div class="texto-cumple">
