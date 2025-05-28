@@ -7,37 +7,34 @@
   <!-- Cargo la fuente Fredoka para usar en toda la página -->
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&display=swap" rel="stylesheet" />
   <style>
-    /* Aquí defino el estilo general del body con fondo, fuente y colores */
     body {
       font-family: 'Fredoka', sans-serif;
       background: url('fondo3.png') no-repeat center top;
       background-size: cover;
       margin: 0;
-      padding: 0 0 40px 0; /* un poco de espacio abajo */
-      color: #5c3b26; /* color marrón para el texto */
-      text-shadow: 1px 1px 2px #fff8e7; /* sombra blanca suave para que resalte */
-      overflow-x: hidden; /* evito scroll horizontal */
-      min-height: 100vh; /* al menos toda la pantalla */
+      padding: 0 0 40px 0;
+      color: #5c3b26;
+      text-shadow: 1px 1px 2px #fff8e7;
+      overflow-x: hidden;
+      min-height: 100vh;
       position: relative;
     }
 
-    /* Div para los corazones que caen en el fondo, siempre encima pero sin molestar */
     .corazones-cayendo {
-      pointer-events: none; /* no interactúa con clicks */
+      pointer-events: none;
       position: fixed;
       top: 0; left: 0; width: 100vw; height: 100vh;
-      z-index: 1; /* debajo del contenido principal */
+      z-index: 1;
       overflow: visible;
     }
-    /* Cada corazón individual que cae, con animación suave */
     .corazon {
       position: absolute;
       font-size: 1.14em;
       opacity: 0.22;
       animation: caer 8s linear infinite;
       pointer-events: none;
-      user-select: none; /* no se puede seleccionar */
-      will-change: transform, opacity; /* para optimizar animación */
+      user-select: none;
+      will-change: transform, opacity;
     }
     @keyframes caer {
       0% { transform: translateY(-10vh) scale(1) rotate(-2deg); opacity: 0.35;}
@@ -45,32 +42,29 @@
       100% { transform: translateY(104vh) scale(0.95) rotate(3deg); opacity: 0;}
     }
 
-    /* Contenedor de las fotos de Julia y Lola, las centro y dejo un espacio grande arriba */
     .fotos-cumple {
       display: flex;
       justify-content: center;
       gap: 10px;
-      margin-top: 45vw; /* ajusto para que estén bien abajo */
+      margin-top: 45vw;
       margin-bottom: 2vw;
       width: 100%;
-      max-width: 330px; /* máximo ancho para que no sean gigantes */
-      z-index: 2; /* encima de los corazones */
+      max-width: 330px;
+      z-index: 2;
       position: relative;
     }
-    /* Estilo de las imágenes de Julia y Lola: tamaño, bordes y sombra */
     .fotos-cumple img {
-      width: 45vw; /* tamaño responsivo ancho */
+      width: 45vw;
       max-width: 140px;
-      height: 40vw; /* tamaño responsivo alto */
+      height: 40vw;
       max-height: 160px;
-      object-fit: cover; /* para que no se deformen */
-      border-radius: 16px; /* bordes redondeados */
-      border: 3px solid #ff6995; /* borde rosa */
-      box-shadow: 0 0 8px rgba(255,105,149,0.4); /* sombra rosa */
-      background: #fff7; /* fondo blanco transparente */
+      object-fit: cover;
+      border-radius: 16px;
+      border: 3px solid #ff6995;
+      box-shadow: 0 0 8px rgba(255,105,149,0.4);
+      background: #fff7;
     }
 
-    /* Texto principal debajo de las fotos, centrado y con sombra */
     .texto-cumple {
       font-size: 1.18em;
       font-weight: 600;
@@ -82,19 +76,15 @@
       text-shadow: 1px 1px 2px #fff9, 0 2px 8px #fff8;
       line-height: 1.15;
     }
-    /* Nombre de Julia y Lola, en bloque para separar del texto de edad */
     .nombres {
       font-size: 1.5em;
       font-weight: 700;
       display: block;
       letter-spacing: 1px;
-      margin-bottom: 0.15em; /* espacio debajo */
+      margin-bottom: 0.15em;
     }
-    /* Color específico para Julia */
     .nombre-julia { color: #ff469e; font-weight: 700;}
-    /* Color específico para Lola */
     .nombre-lola { color: #ffb968; font-weight: 700;}
-    /* Estilo del símbolo & con degradado */
     .nombre-and {
       background: linear-gradient(90deg, #ff469e 0%, #ffb968 100%);
       -webkit-background-clip: text;
@@ -104,9 +94,8 @@
       font-size: 1.07em;
       padding: 0 0.11em;
     }
-    /* Texto "¡Cumplimos 10 años!" con animación de brillo neón */
     .cumple-edad {
-      font-size: 1.2em; /* tamaño un poco más pequeño que el nombre */
+      font-size: 1.2em;
       color: #ff1da7;
       font-weight: bold;
       margin: 0;
@@ -156,7 +145,6 @@
       80% { transform: scale(1.01);}
     }
 
-    /* Este div deja espacio vacío para que el fondo se vea bien */
     .espacio-fondo {
       width: 100%;
       height: 35vw;
@@ -164,13 +152,12 @@
       max-height: 200px;
     }
 
-    /* La frase invitación, grande, rosa y con animaciones de brillo y movimiento */
     .subfrase-grande-rosa {
       font-size: 1.08em;
       font-weight: 800;
       width: 97vw;
       max-width: 320px;
-      margin: 8em auto 1.1em auto; /* margen arriba ajustado para subirla un poco */
+      margin: 8em auto 1.1em auto;
       color: #ff3d8b;
       text-align: center;
       letter-spacing: 1px;
@@ -208,7 +195,6 @@
       58% { transform: translateX(0.7px);}
     }
 
-    /* Zona final donde pongo toda la info del evento */
     .zona-final {
       width: 100%;
       max-width: 360px;
@@ -218,7 +204,6 @@
       align-items: center;
       background: none !important;
     }
-    /* Texto con info del evento y cuenta atrás */
     .evento-info, .countdown {
       font-size: 1.12em;
       font-weight: 700;
@@ -237,7 +222,6 @@
       margin-bottom: 1em;
       font-weight: 900;
     }
-    /* Botones de acción con diseño degradado y animación */
     .botones-cumple {
       display: flex;
       flex-direction: column;
@@ -283,32 +267,85 @@
       }
     }
 
-    /* Ajustes para pantallas pequeñas */
+    /* ---- LO NUEVO: Corazón doble al final ---- */
+    .corazon-doble-final {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2.4em;
+      margin-bottom: 1.2em;
+      z-index: 4;
+      position: relative;
+      width: 100%;
+    }
+    .emoji-corazon-doble {
+      font-size: 4em;
+      animation: palpitaCorazonGrande 1.18s infinite cubic-bezier(.71,0,.36,1.25);
+      filter:
+        drop-shadow(0 0 20px #ffb3f7bb)
+        drop-shadow(0 0 4px #ffb3dd)
+        drop-shadow(0 0 6px #fff);
+      margin-bottom: 0.13em;
+      text-shadow:
+        0 0 16px #ffb3dd99,
+        0 0 12px #ffb3dd88,
+        1px 1px 0 #fff;
+      will-change: transform, filter;
+    }
+    @keyframes palpitaCorazonGrande {
+      0%, 100% { transform: scale(1);}
+      20% { transform: scale(1.21);}
+      40% { transform: scale(0.96);}
+      55% { transform: scale(1.12);}
+      70% { transform: scale(1.05);}
+      85% { transform: scale(1.2);}
+    }
+    .frase-amor-final {
+      font-size: 1.25em;
+      font-weight: 800;
+      color: #ff2d8a;
+      text-shadow:
+        0 0 15px #ffb3dd99,
+        0 0 10px #fff8,
+        1px 1px 0 #fff;
+      letter-spacing: 0.7px;
+      font-family: 'Fredoka', sans-serif;
+      margin-top: 0.15em;
+      background: none !important;
+      text-align: center;
+      animation: brilloFraseAmor 1.6s infinite alternate;
+    }
+    @keyframes brilloFraseAmor {
+      0%,100% { color: #ff2d8a; text-shadow: 0 0 15px #ffb3dd99, 1px 1px 0 #fff; }
+      40% { color: #f476c7; text-shadow: 0 0 24px #ffd3fa, 0 0 10px #ff2d8a44, 1px 1px 0 #fff; }
+      80% { color: #f2519e; text-shadow: 0 0 26px #fff6, 1px 1px 0 #fff;}
+    }
+
     @media (max-width: 600px) {
       .fotos-cumple {
-        margin-top: 35vw; /* Fotos un poco más arriba en móvil */
+        margin-top: 35vw;
         gap: 4vw;
-        width: 100%;         /* Aseguro que ocupe todo el ancho */
-        max-width: none;     /* Quito máximo ancho para no limitar */
+        width: 100%;
+        max-width: none;
         padding: 0;
         box-sizing: border-box;
-        justify-content: center;  /* Centrado total */
-
+        justify-content: center;
       }
       .fotos-cumple img {
         width: 48vw;
         height: 42vw;
         max-width: 160px;
         max-height: 170px;
-        margin: 0 auto; /* Para que no se desplacen */
-        display: block; /* Evita que se muevan por inline */
+        margin: 0 auto;
+        display: block;
       }
       .texto-cumple {
         font-size: 1.09em;
       }
       .subfrase-grande-rosa {
         font-size: 1em;
-        margin: 10em auto 1.4em auto; /* Subo un poco menos en móvil */
+        margin: 10em auto 1.4em auto;
       }
       .botones-cumple {
         max-width: 98vw;
@@ -317,44 +354,12 @@
         height: 35vw;
         min-height: 90px;
       }
-      .corazon-doble-con-frase {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 0.4em;
-  z-index: 3;
-  position: relative;
-  width: 100%;
-}
-
-.corazon-doble {
-  font-size: 2.9em;
-  animation: palpitaCorazon 1.25s infinite cubic-bezier(.66,0,0,1);
-  filter: drop-shadow(0 0 9px #ffb3ddaa) drop-shadow(0 0 2px #fff);
-}
-
-@keyframes palpitaCorazon {
-  0%, 100% { transform: scale(1);}
-  15% { transform: scale(1.17);}
-  30% { transform: scale(0.94);}
-  50% { transform: scale(1.08);}
-  70% { transform: scale(1.03);}
-  85% { transform: scale(1.18);}
-}
-
-.frase-amor {
-  margin-top: -0.1em;
-  font-size: 1.01em;
-  font-weight: 700;
-  color: #f257a5;
-  text-shadow:
-    0 2px 9px #fff6,
-    0 0 3px #ffb3dd88,
-    1px 1px 0 #fff;
-  letter-spacing: 0.4px;
-  font-family: 'Fredoka', sans-serif;
-  background: none !important;
-}
+      .corazon-doble-final .emoji-corazon-doble {
+        font-size: 3.2em;
+      }
+      .frase-amor-final {
+        font-size: 1.08em;
+      }
     }
   </style>
 </head>
@@ -367,11 +372,6 @@
     <img src="julia1.jpg" alt="Foto de Julia" />
     <img src="lola.jpg" alt="Foto de Lola" />
   </div>
-
-  <div class="corazon-doble-con-frase">
-  <span class="corazon-doble">💞</span>
-  <div class="frase-amor">Con mucho amor, Julia & Lola</div>
-</div>
 
   <!-- Texto con nombres y edad (en dos líneas) -->
   <div class="texto-cumple">
@@ -403,9 +403,15 @@
     </div>
   </div>
 
+  <!-- 💞 Corazón doble palpitante y frase bonita al final de la página -->
+  <div class="corazon-doble-final">
+    <span class="emoji-corazon-doble">💞</span>
+    <div class="frase-amor-final">Con mucho amor</div>
+  </div>
+
   <!-- Script para la cuenta atrás -->
   <script>
-    const eventDate = new Date(2025, 5, 16, 17, 0, 0); // Fecha y hora del evento
+    const eventDate = new Date(2025, 5, 16, 17, 0, 0);
     function updateCountdown() {
       const now = new Date();
       const diff = eventDate - now;
