@@ -267,7 +267,7 @@
       }
     }
 
-    /* ---- LO NUEVO: Corazón doble al final ---- */
+    /* ---- Corazón doble al final ---- */
     .corazon-doble-final {
       display: flex;
       flex-direction: column;
@@ -279,19 +279,19 @@
       position: relative;
       width: 100%;
     }
-    .emoji-corazon-doble {
-      font-size: 4em;
-      animation: palpitaCorazonGrande 1.18s infinite cubic-bezier(.71,0,.36,1.25);
-      filter:
-        drop-shadow(0 0 20px #ffb3f7bb)
-        drop-shadow(0 0 4px #ffb3dd)
-        drop-shadow(0 0 6px #fff);
-      margin-bottom: 0.13em;
-      text-shadow:
-        0 0 16px #ffb3dd99,
-        0 0 12px #ffb3dd88,
-        1px 1px 0 #fff;
-      will-change: transform, filter;
+  .emoji-corazon-doble {
+  font-size: 5.5em;
+  animation: palpitaCorazonGrande 1.18s infinite cubic-bezier(.71,0,.36,1.25);
+  filter:
+    drop-shadow(0 0 22px #ffb3f7cc)
+    drop-shadow(0 0 8px #ffb3dd)
+    drop-shadow(0 0 12px #fff);
+  margin-bottom: 0.13em;
+  text-shadow:
+    0 0 22px #ffb3dd99,
+    0 0 18px #ffb3dd88,
+    1px 1px 0 #fff;
+  will-change: transform, filter;
     }
     @keyframes palpitaCorazonGrande {
       0%, 100% { transform: scale(1);}
@@ -373,7 +373,7 @@
     <img src="lola.jpg" alt="Foto de Lola" />
   </div>
 
-  <!-- Texto con nombres y edad (en dos líneas) -->
+  <!-- Texto con nombres y edad -->
   <div class="texto-cumple">
     <span class="nombres">
       <span class="nombre-julia">Julia</span>
@@ -383,7 +383,7 @@
     <span class="cumple-edad">¡Cumplimos 10 años!</span>
   </div>
 
-  <!-- Espacio vacío para que se vea bien el fondo -->
+  <!-- Espacio vacío que se vea bien el fondo -->
   <div class="espacio-fondo"></div>
 
   <!-- Zona final con invitación, fecha, dirección, cuenta atrás y botones -->
@@ -403,10 +403,10 @@
     </div>
   </div>
 
-  <!-- 💞 Corazón doble palpitante y frase bonita al final de la página -->
+  <!-- 💞 Corazón doble palpitante -->
   <div class="corazon-doble-final">
     <span class="emoji-corazon-doble">💞</span>
-    <div class="frase-amor-final">Con mucho amor</div>
+    <div class="frase-amor-final">Con mucho amor de Julia & Lola</div>
   </div>
 
   <!-- Script para la cuenta atrás -->
